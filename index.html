@@ -10,8 +10,14 @@
 <body>
 
     <header>
-        <div>🏠 Главная</div>
-        <div>🔍 Поиск</div>
+        <div class="header">
+            <div class="menu" onclick="openMenu()">☰</div>
+
+            <div class="right">
+                <div class="login">Login</div>
+                <div class="profile">👤</div>
+            </div>
+        </div>
     </header>
 
     <main>
@@ -45,6 +51,27 @@
         <div>💬 Чаты</div>
         <div>👤 Профиль</div>
     </footer>
+    <script>
+
+        function openMenu() {
+
+            document.getElementById('sidebar').classList.add('active');
+
+            document.getElementById('overlay').classList.add('active');
+
+        }
+
+
+
+        function closeMenu() {
+
+            document.getElementById('sidebar').classList.remove('active');
+
+            document.getElementById('overlay').classList.remove('active');
+
+        }
+
+    </script>
 
 </body>
 
