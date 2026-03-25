@@ -9,69 +9,26 @@
 
 <body>
 
-    <header>
-        <div class="header">
+    <header class="header-page">
+        <div class="container header-container">
+            <a class="logo" href="./index.html">
+                <img src="logo.png" alt="Frenden" height="40">
+            </a>
             <div class="menu" onclick="openMenu()">☰</div>
+            <nav class="header-nav">
 
-            <div class="right">
-                <div class="login">Login</div>
-                <div class="profile">👤</div>
-            </div>
+                <div class="right">
+                    <div class="login">Login</div>
+                    <div class="profile">👤</div>
+            </nav>
         </div>
     </header>
 
-    <main>
-
-        <!-- Фильтры -->
-        <div class="filters">
-            <button>Где ты</button>
-            <button>Когда</button>
-            <button>Фильтры</button>
-        </div>
-
-        <!-- Категории -->
-        <div class="categories">
-            <button>☕ Сейчас рядом</button>
-            <button>🏃 Активности</button>
-            <button>✈️ Путешествия</button>
-            <button>🎨 Хобби</button>
-            <button>❓ Разное</button>
-        </div>
-
-        <!-- Карточки -->
-        <div class="cards">
-            <div class="card">Прогулка через 30 мин</div>
-            <div class="card">Зал сегодня в 18:00</div>
-            <div class="card">Поездка в Италию</div>
-        </div>
-
-    </main>
-
-    <footer>
-        <div>💬 Чаты</div>
-        <div>👤 Профиль</div>
-    </footer>
-    <script>
-
-        function openMenu() {
-
-            document.getElementById('sidebar').classList.add('active');
-
-            document.getElementById('overlay').classList.add('active');
-
-        }
 
 
 
-        function closeMenu() {
 
-            document.getElementById('sidebar').classList.remove('active');
 
-            document.getElementById('overlay').classList.remove('active');
-
-        }
-
-    </script>
 
 </body>
 
