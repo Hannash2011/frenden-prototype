@@ -1,31 +1,40 @@
+* {
+    box-sizing: border-box;
+}
+
 /* BODY */
 body {
     font-family: sans-serif;
     margin: 0;
     background: #f5f5f5;
+    overflow: hidden;
 }
 
 /* HEADER */
+/* HEADER */
 .header-page {
-    background-color: rgb(64, 181, 228);
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 80px;
-    /* чуть выше, чтобы текст и поиск помещались */
+    background-color: rgb(64, 181, 228);
     display: flex;
-    align-items: center;
-    padding: 0 16px;
+    justify-content: center;
+    /* центрируем контейнер */
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
     z-index: 1000;
 }
 
+/* ВНУТРЕННИЙ КОНТЕЙНЕР */
 .header-container {
+    width: 100%;
+    max-width: 1200px;
+    /* ограничение как у норм сайтов */
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 100%;
+    padding: 0 16px;
 }
 
 /* ЛОГО */
@@ -37,13 +46,12 @@ body {
 
 /* ЦЕНТР */
 .header-center {
+    flex: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    flex: 1;
-    /* чтобы центр занимал всю свободную ширину */
     margin: 0 16px;
+    max-width: 400px;
 }
 
 .header-title {
@@ -56,10 +64,8 @@ body {
 /* Поисковая строка */
 .search-box {
     width: 100%;
-    max-width: 300px;
-    /* не растягивается слишком сильно */
-    min-width: 150px;
-    /* на маленьких экранах не слишком узкая */
+    max-width: 100%;
+    min-width: 0%;
     padding: 6px 10px;
     border-radius: 8px;
     border: none;
@@ -83,6 +89,7 @@ body {
     display: flex;
     align-items: center;
     gap: 12px;
+    flex-shrink: 0;
 }
 
 .login {
