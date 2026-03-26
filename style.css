@@ -56,7 +56,7 @@ body {
 }
 
 .header-title {
-    font-size: 14px;
+    font-size: 20px;
     color: #ffffff;
     font-weight: bold;
     margin-bottom: 4px;
@@ -134,8 +134,8 @@ body {
     top: 100%;
     left: 0;
     /* чуть ниже поля поиска */
-    background: rgb(85, 228, 132);
-    border: 1px solid #ccc;
+    background: rgb(80, 231, 131);
+    border: 1px solid #29aa6e;
     border-radius: 8px;
     width: 100%;
     max-width: 300px;
