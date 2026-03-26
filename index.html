@@ -6,30 +6,70 @@
     <title>FrenDen</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<header class="header-page">
-    <div class="container header-container">
-        <!-- Логотип слева -->
-        <a class="logo" href="./index.html">
-            <img src="logo.png" alt="FrenDen" height="40">
-        </a>
 
-        <!-- Центральная часть: подпись + поиск -->
+<body>
+    <header class="header-page">
+        <div class="container header-container">
+            <!-- Логотип слева -->
+            <a class="logo" href="./index.html">
+                <img src="logo.png" alt="FrenDen" height="40">
+            </a>
 
-        <div class="header-center">
-            <div class="header-title">What shall we do?</div>
-            <input type="text" class="search-box" placeholder="Search activities..."
-                oninput="showSuggestions(this.value)">
+            <!-- Центральная часть: подпись + поиск -->
 
-            <!-- Сюда будут подставляться подсказки -->
-            <div class="suggestions" id="suggestions"></div>
-        </div>
+            <div class="header-center">
+                <div class="header-title">What shall we do?</div>
+                <input type="text" class="search-box" placeholder="Search activities..."
+                    oninput="showSuggestions(this.value)">
 
-        <!-- Справа: login + профиль -->
-        <nav class="header-nav">
-            <div class="right">
-                <div class="login">Login</div>
-                <div class="profile">👤</div>
+                <!-- Сюда будут подставляться подсказки -->
+                <div class="suggestions" id="suggestions"></div>
             </div>
-        </nav>
-    </div>
-</header>
+
+            <!-- Справа: login + профиль -->
+            <nav class="header-nav">
+                <div class="right">
+                    <div class="login">Login</div>
+                    <div class="profile">👤</div>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <script>
+        const activities = ["Karaoke", "Bar", "Walk", "Cinema", "Cafe", "Concert", "Yoga"];
+
+        function showSuggestions(value) {
+            const container = document.getElementById("suggestions");
+            container.innerHTML = "";
+
+            if (value.trim() === "") {
+                container.style.display = "none";
+                return;
+            }
+
+            const filtered = activities.filter(act =>
+                act.toLowerCase().includes(value.toLowerCase())
+            );
+
+            if (filtered.length === 0) {
+                container.style.display = "none";
+                return;
+            }
+
+            filtered.forEach(act => {
+                const div = document.createElement("div");
+                div.classList.add("suggestion-item");
+                div.textContent = act;
+
+                div.onclick = () => {
+                    document.querySelector(".search-box").value = act;
+                    container.style.display = "none";
+                };
+
+                container.appendChild(div);
+            });
+
+            container.style.display = "block";
+        }
+    </script>
+</body>
