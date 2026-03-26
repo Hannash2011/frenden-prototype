@@ -7,7 +7,7 @@ body {
     font-family: sans-serif;
     margin: 0;
     background: #f5f5f5;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 /* HEADER */
@@ -131,10 +131,10 @@ body {
 /* Контейнер подсказок */
 .suggestions {
     position: absolute;
-    /* поверх других элементов */
-    top: 60px;
+    top: 100%;
+    left: 0;
     /* чуть ниже поля поиска */
-    background: #ffffff;
+    background: red;
     border: 1px solid #ccc;
     border-radius: 8px;
     width: 100%;
