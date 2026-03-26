@@ -134,7 +134,7 @@ body {
     top: 100%;
     left: 0;
     /* чуть ниже поля поиска */
-    background: red;
+    background: rgb(85, 228, 132);
     border: 1px solid #ccc;
     border-radius: 8px;
     width: 100%;
