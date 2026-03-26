@@ -8,12 +8,27 @@
 </head>
 <header class="header-page">
     <div class="container header-container">
+        <!-- Логотип слева -->
         <a class="logo" href="./index.html">
             <img src="logo.png" alt="FrenDen" height="40">
         </a>
 
-        <div class="menu" onclick="openMenu()">☰</div>
+        <!-- Центральная часть: подпись + поиск -->
+        <div class="header-center">
+            <div class="header-title">What shall we do?</div>
+            <input type="text" class="search-box" placeholder="Search activities...">
+        </div>
 
+        <div class="header-center">
+            <div class="header-title">What shall we do?</div>
+            <input type="text" class="search-box" placeholder="Search activities..."
+                oninput="showSuggestions(this.value)">
+
+            <!-- Сюда будут подставляться подсказки -->
+            <div class="suggestions" id="suggestions"></div>
+        </div>
+
+        <!-- Справа: login + профиль -->
         <nav class="header-nav">
             <div class="right">
                 <div class="login">Login</div>
@@ -22,7 +37,3 @@
         </nav>
     </div>
 </header>
-
-</body>
-
-</html>

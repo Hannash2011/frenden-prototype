@@ -1,3 +1,4 @@
+/* BODY */
 body {
     font-family: sans-serif;
     margin: 0;
@@ -11,7 +12,8 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    height: 60px;
+    height: 80px;
+    /* чуть выше, чтобы текст и поиск помещались */
     display: flex;
     align-items: center;
     padding: 0 16px;
@@ -33,10 +35,47 @@ body {
     cursor: pointer;
 }
 
-/* BURGER */
-.menu {
-    font-size: 24px;
-    cursor: pointer;
+/* ЦЕНТР */
+.header-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    /* чтобы центр занимал всю свободную ширину */
+    margin: 0 16px;
+}
+
+.header-title {
+    font-size: 14px;
+    color: #ffffff;
+    font-weight: bold;
+    margin-bottom: 4px;
+}
+
+/* Поисковая строка */
+.search-box {
+    width: 100%;
+    max-width: 300px;
+    /* не растягивается слишком сильно */
+    min-width: 150px;
+    /* на маленьких экранах не слишком узкая */
+    padding: 6px 10px;
+    border-radius: 8px;
+    border: none;
+    font-size: 14px;
+}
+
+/* Placeholder */
+.search-box::placeholder {
+    color: #888;
+    font-style: italic;
+}
+
+/* При фокусе */
+.search-box:focus {
+    outline: none;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
 }
 
 /* ПРАВАЯ ЧАСТЬ */
@@ -49,9 +88,57 @@ body {
 .login {
     cursor: pointer;
     font-size: 14px;
+    color: #ffffff;
 }
 
 .profile {
     font-size: 20px;
+    cursor: pointer;
+    color: #ffffff;
+}
+
+/* Адаптивность */
+@media screen and (max-width: 600px) {
+    .header-page {
+        height: 100px;
+        /* чуть выше для мобильного */
+        flex-direction: column;
+        padding: 8px 16px;
+    }
+
+    .header-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .right {
+        margin-top: 8px;
+    }
+
+    .search-box {
+        max-width: 250px;
+    }
+}
+
+/* Контейнер подсказок */
+.suggestions {
+    position: absolute;
+    /* поверх других элементов */
+    top: 60px;
+    /* чуть ниже поля поиска */
+    background: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 300px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1001;
+    display: none;
+    /* скрыто по умолчанию */
+}
+
+/* Каждый элемент подсказки */
+.suggestion-item {
+    padding: 8px 10px;
     cursor: pointer;
 }
