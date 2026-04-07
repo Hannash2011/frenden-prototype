@@ -8,102 +8,113 @@ body {
     margin: 0;
     background: #f5f5f5;
     overflow-x: hidden;
-    padding-top: 80px;
+    padding-top: 25vh;
 }
 
 /* HEADER */
 /* HEADER */
+/* ХЕДЕР */
 .header-page {
+    height: 25vh;
+    min-height: 200px;
+    width: 100%;
+    background: rgb(64, 181, 228);
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 80px;
-    background-color: rgb(64, 181, 228);
-    display: flex;
-    justify-content: center;
-    /* центрируем контейнер */
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
     z-index: 1000;
 }
 
-/* ВНУТРЕННИЙ КОНТЕЙНЕР */
-.header-container {
-    width: 100%;
-    max-width: 1200px;
-    /* ограничение как у норм сайтов */
+/* ВНУТРИ */
+.header-inner {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px 16px;
+}
+
+/* ВЕРХ */
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* ЛЕВО */
+.header-left {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 0 16px;
+    gap: 8px;
 }
 
-/* ЛОГО */
-.logo img {
-    display: block;
+.logo-img {
     height: 40px;
-    cursor: pointer;
 }
 
-/* ЦЕНТР */
-.header-center {
-    position: relative;
-    flex: 1;
+.logo-text {
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+/* ПРАВО */
+.header-right {
+    display: flex;
+    gap: 12px;
+    font-size: 20px;
+    color: white;
+}
+
+/* ПОИСК */
+.search-block {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 0 16px;
-    max-width: 400px;
 }
 
-.header-title {
-    font-size: 18px;
-    color: #ffffff;
-    font-weight: bold;
-    margin-bottom: 4px;
-}
-
-/* Поисковая строка */
-.search-box {
+/* БОЛЬШОЙ ПОИСК */
+.main-search {
     width: 100%;
-    max-width: 100%;
-    min-width: 0%;
+    max-width: 500px;
+    padding: 10px;
+    border-radius: 12px;
+    border: none;
+    font-size: 16px;
+}
+
+/* НИЖНЯЯ ЧАСТЬ ПОИСКА */
+.search-extra {
+    display: flex;
+    gap: 10px;
+    margin-top: 6px;
+}
+
+.location,
+.date {
+    background: white;
     padding: 6px 10px;
     border-radius: 8px;
-    border: none;
-    font-size: 14px;
+    font-size: 12px;
 }
 
-/* Placeholder */
-.search-box::placeholder {
-    color: #888;
-    font-style: italic;
-}
-
-/* При фокусе */
-.search-box:focus {
-    outline: none;
-    box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
-}
-
-/* ПРАВАЯ ЧАСТЬ */
-.right {
+/* КАЛЕНДАРЬ */
+.calendar {
     display: flex;
-    align-items: center;
-    gap: 12px;
-    flex-shrink: 0;
+    justify-content: center;
+    gap: 8px;
 }
 
-.login {
-    cursor: pointer;
-    font-size: 14px;
-    color: #ffffff;
+.day {
+    background: white;
+    padding: 8px;
+    border-radius: 8px;
+    font-size: 12px;
 }
 
-.profile {
-    font-size: 20px;
-    cursor: pointer;
-    color: #ffffff;
+.day.active {
+    background: black;
+    color: white;
 }
 
 /* Адаптивность */

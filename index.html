@@ -21,32 +21,49 @@
 
 <body>
     <header class="header-page">
-        <div class="container header-container">
-            <!-- Логотип слева -->
-            <a class="logo" href="./index.html">
-                <img src="images/logo.png" alt="FrenDen" height="40">
-            </a>
+        <div class="header-inner">
 
-            <!-- Центральная часть: подпись + поиск -->
+            <!-- ВЕРХНЯЯ СТРОКА -->
+            <div class="header-top">
 
-            <div class="header-center">
-                <div class="header-title">What shall we do?</div>
-                <input type="text" class="search-box" placeholder="Search activities..."
-                    oninput="showSuggestions(this.value)">
+                <!-- ЛЕВО -->
+                <div class="header-left">
+                    <img src="images/logo.png" class="logo-img">
+                    <span class="logo-text">FrenDen</span>
+                </div>
 
-                <!-- Сюда будут подставляться подсказки -->
+                <!-- ПРАВО -->
+                <div class="header-right">
+                    <div class="chat">💬</div>
+                    <div class="profile">👤</div>
+                </div>
+
+            </div>
+
+            <!-- ПОИСК -->
+            <div class="search-block">
+                <input type="text" class="main-search" placeholder="What shall we do?">
+
+                <div class="search-extra">
+                    <div class="location">📍 Anywhere</div>
+                    <div class="date">📅 Any day</div>
+                </div>
+
                 <div class="suggestions" id="suggestions"></div>
             </div>
 
-            <!-- Справа: login + профиль -->
-            <nav class="header-nav">
-                <div class="right">
-                    <div class="login">Login</div>
-                    <div class="profile">👤</div>
-                </div>
-            </nav>
+            <!-- КАЛЕНДАРЬ -->
+            <div class="calendar">
+                <div class="day">Mon</div>
+                <div class="day">Tue</div>
+                <div class="day active">Wed</div>
+                <div class="day">Thu</div>
+                <div class="day">Fri</div>
+            </div>
+
         </div>
     </header>
+
     <script>
         const activities = ["Karaoke", "Bar", "Walk", "Cinema", "Cafe", "Concert", "Yoga"];
 
