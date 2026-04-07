@@ -8,6 +8,7 @@ body {
     margin: 0;
     background: #f5f5f5;
     overflow-x: hidden;
+    padding-top: 80px;
 }
 
 /* HEADER */
@@ -107,6 +108,11 @@ body {
 
 /* Адаптивность */
 @media screen and (max-width: 600px) {
+
+    body {
+        padding-top: 100px;
+    }
+
     .header-page {
         height: 100px;
         /* чуть выше для мобильного */
