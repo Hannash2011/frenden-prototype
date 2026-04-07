@@ -71,6 +71,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
 }
 
 /* БОЛЬШОЙ ПОИСК */
@@ -125,16 +126,10 @@ body {
     }
 
     .header-page {
-        height: 100px;
-        /* чуть выше для мобильного */
-        flex-direction: column;
-        padding: 8px 16px;
+        height: auto;
+        min height: 220px;
     }
 
-    .header-container {
-        flex-direction: column;
-        align-items: center;
-    }
 
     .right {
         margin-top: 8px;

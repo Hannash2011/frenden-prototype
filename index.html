@@ -100,5 +100,9 @@
 
             container.style.display = "block";
         }
+
+        document.querySelector(".main-search").addEventListener("input", function () {
+            showSuggestions(this.value);
+        });
     </script>
 </body>
