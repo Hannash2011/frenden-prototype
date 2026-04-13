@@ -45,71 +45,53 @@
             <div class="search-block">
                 <input type="text" class="main-search" placeholder="What shall we do?">
 
-                <div class="search-extra">
+                <<div class="search-extra">
+                    <div class="location">📍 Anywhere</div>
 
-                    <div class="filter" id="whereBtn">
-                        📍 Where
+                    <div class="date" id="dateBtn">
+                        📅 Any day
                     </div>
-
-                    <div class="filter" id="whenBtn">
-                        📅 When
-                    </div>
-
-                </div>
-
-                <!-- WHEN (КАЛЕНДАРЬ) -->
-                <div class="dropdown" id="whenDropdown">
-                    <input type="date">
-                </div>
-
-                <div class="suggestions" id="suggestions"></div>
             </div>
 
-            <!-- КАЛЕНДАРЬ -->
+            <!-- календарь -->
+            <input type="date" id="calendar" class="calendar-input">
+
+            <!-- WHEN (КАЛЕНДАРЬ) -->
+            <div class="dropdown" id="whenDropdown">
+                <input type="date">
+            </div>
+
+            <div class="suggestions" id="suggestions"></div>
+        </div>
+
+        <!-- КАЛЕНДАРЬ -->
 
 
         </div>
     </header>
 
-    <script>
-        const activities = ["Karaoke", "Bar", "Walk", "Cinema", "Cafe", "Concert", "Yoga"];
+    const dateBtn = document.getElementById("dateBtn");
+    const calendar = document.getElementById("calendar");
 
-        function showSuggestions(value) {
-            const container = document.getElementById("suggestions");
-            container.innerHTML = "";
+    // открыть календарь
+    dateBtn.onclick = () => {
+    calendar.showPicker();
+    };
 
-            if (value.trim() === "") {
-                container.style.display = "none";
-                return;
-            }
+    // выбрать дату
+    calendar.addEventListener("change", function () {
+    const value = this.value;
 
-            const filtered = activities.filter(act =>
-                act.toLowerCase().includes(value.toLowerCase())
-            );
+    if (value) {
+    const date = new Date(value);
 
-            if (filtered.length === 0) {
-                container.style.display = "none";
-                return;
-            }
+    const formatted = date.toLocaleDateString("en-GB", {
+    day: "numeric",
+    month: "short"
+    });
 
-            filtered.forEach(act => {
-                const div = document.createElement("div");
-                div.classList.add("suggestion-item");
-                div.textContent = act;
+    dateBtn.textContent = "📅 " + formatted;
+    }
+    });
 
-                div.onclick = () => {
-                    document.querySelector(".search-box").value = act;
-                    container.style.display = "none";
-                };
-
-                container.appendChild(div);
-            });
-
-            container.style.display = "block";
-        }
-
-        document.querySelector(".main-search").addEventListener("input", function () {
-            showSuggestions(this.value);
-        });
-    </script>
 </body>
