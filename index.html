@@ -46,21 +46,27 @@
                 <input type="text" class="main-search" placeholder="What shall we do?">
 
                 <div class="search-extra">
-                    <div class="location">📍 Anywhere</div>
-                    <div class="date">📅 Any day</div>
+
+                    <div class="filter" id="whereBtn">
+                        📍 Where
+                    </div>
+
+                    <div class="filter" id="whenBtn">
+                        📅 When
+                    </div>
+
+                </div>
+
+                <!-- WHEN (КАЛЕНДАРЬ) -->
+                <div class="dropdown" id="whenDropdown">
+                    <input type="date">
                 </div>
 
                 <div class="suggestions" id="suggestions"></div>
             </div>
 
             <!-- КАЛЕНДАРЬ -->
-            <div class="calendar">
-                <div class="day">Mon</div>
-                <div class="day">Tue</div>
-                <div class="day active">Wed</div>
-                <div class="day">Thu</div>
-                <div class="day">Fri</div>
-            </div>
+
 
         </div>
     </header>
