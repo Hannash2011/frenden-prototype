@@ -2,96 +2,135 @@
 <html lang="ru">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <!-- iOS -->
-    <link rel="apple-touch-icon" sizes="180x180" href="images/logo.png">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
 
-    <!-- Android / PWA -->
-    <link rel="manifest" href="manifest.json">
+<!-- iOS -->
+<link rel="apple-touch-icon" sizes="180x180" href="images/logo.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
 
-    <!-- Favicon для браузера -->
-    <link rel="icon" type="image/png" sizes="32x32" href="images/logo-32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="images/logo-16.png">
+<!-- Android / PWA -->
+<link rel="manifest" href="manifest.json">
 
+<!-- Favicon -->
+<link rel="icon" type="image/png" sizes="32x32" href="images/logo-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="images/logo-16.png">
 </head>
 
-
 <body>
-    <header class="header-page">
-        <div class="header-inner">
+<header class="header-page">
+<div class="header-inner">
 
-            <!-- ВЕРХНЯЯ СТРОКА -->
-            <div class="header-top">
+<!-- ВЕРХ -->
+<div class="header-top">
 
-                <!-- ЛЕВО -->
-                <div class="header-left">
-                    <img src="images/logo.png" class="logo-img">
-                    <span class="logo-text">FrenDen</span>
-                </div>
+<div class="header-left">
+<img src="images/logo.png" class="logo-img">
+<span class="logo-text">FrenDen</span>
+</div>
 
-                <!-- ПРАВО -->
-                <div class="header-right">
-                    <div class="chat">💬</div>
-                    <div class="profile">👤</div>
-                </div>
+<div class="header-right">
+<div class="chat">💬</div>
+<div class="profile">👤</div>
+<div class="login">Login</div>
+</div>
 
-            </div>
+</div>
 
-            <!-- ПОИСК -->
-            <div class="search-block">
-                <input type="text" class="main-search" placeholder="What shall we do?">
+<!-- ПОИСК -->
+<div class="search-block">
 
-                <<div class="search-extra">
-                    <div class="location">📍 Anywhere</div>
+<input type="text" class="main-search" placeholder="What shall we do?">
 
-                    <div class="date" id="dateBtn">
-                        📅 Any day
-                    </div>
-            </div>
+<!-- НИЖНЯЯ ПОЛОСА -->
+<div class="search-extra">
 
-            <!-- календарь -->
-            <input type="date" id="calendar" class="calendar-input">
+<!-- LOCATION -->
+<div class="location-wrapper">
+<div class="location" id="locationBtn">🌍 Anywhere</div>
 
-            <!-- WHEN (КАЛЕНДАРЬ) -->
-            <div class="dropdown" id="whenDropdown">
-                <input type="date">
-            </div>
+<div class="location-dropdown" id="locationDropdown">
+<div class="location-option">🌍 Anywhere</div>
+<div class="location-option">📍 Near me</div>
+<input type="text" id="locationInput" placeholder="Enter city or country...">
+</div>
+</div>
 
-            <div class="suggestions" id="suggestions"></div>
-        </div>
+<!-- DATE -->
+<div class="date" id="dateBtn">
+📅 Any day
+</div>
 
-        <!-- КАЛЕНДАРЬ -->
+</div>
 
+<!-- скрытый календарь -->
+<input type="date" id="calendar" class="calendar-input">
 
-        </div>
-    </header>
+<!-- подсказки -->
+<div class="suggestions" id="suggestions"></div>
 
-    const dateBtn = document.getElementById("dateBtn");
-    const calendar = document.getElementById("calendar");
+</div>
 
-    // открыть календарь
-    dateBtn.onclick = () => {
-    calendar.showPicker();
-    };
+</div>
+</header>
 
-    // выбрать дату
-    calendar.addEventListener("change", function () {
-    const value = this.value;
+<script src="script.js"></script>
 
-    if (value) {
-    const date = new Date(value);
+const dateBtn = document.getElementById("dateBtn");
+const calendar = document.getElementById("calendar");
 
-    const formatted = date.toLocaleDateString("en-GB", {
-    day: "numeric",
-    month: "short"
-    });
+dateBtn.onclick = () => {
+calendar.showPicker();
+};
 
-    dateBtn.textContent = "📅 " + formatted;
-    }
-    });
+calendar.addEventListener("change", function () {
+const value = this.value;
+
+if (value) {
+const date = new Date(value);
+
+const formatted = date.toLocaleDateString("en-GB", {
+day: "numeric",
+month: "short"
+});
+
+dateBtn.textContent = "📅 " + formatted;
+}
+});
+
+/* ===== LOCATION ===== */
+const locationBtn = document.getElementById("locationBtn");
+const dropdown = document.getElementById("locationDropdown");
+const options = document.querySelectorAll(".location-option");
+const input = document.getElementById("locationInput");
+
+locationBtn.onclick = () => {
+dropdown.style.display =
+dropdown.style.display === "block" ? "none" : "block";
+};
+
+options.forEach(option => {
+option.onclick = () => {
+locationBtn.textContent = option.textContent;
+dropdown.style.display = "none";
+};
+});
+
+input.addEventListener("keypress", function(e) {
+if (e.key === "Enter") {
+locationBtn.textContent = "📍 " + input.value;
+dropdown.style.display = "none";
+}
+});
+
+document.addEventListener("click", function(e) {
+if (!document.querySelector(".location-wrapper").contains(e.target)) {
+dropdown.style.display = "none";
+}
+});
+
 
 </body>
+</html>
