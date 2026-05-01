@@ -49,7 +49,9 @@
 
                     <!-- LOCATION -->
                     <div class="location-wrapper">
-                        <div class="location" id="locationBtn">🌍 Anywhere</div>
+                        <button type="button" class="location" id="locationBtn">
+                            🌍 Anywhere
+                        </button>
                         <div class="location-dropdown" id="locationDropdown">
                             <div class="location-option">🌍 Anywhere</div>
                             <div class="location-option">📍 Near me</div>
@@ -59,9 +61,11 @@
                     </div>
 
                     <!-- DATE -->
-                    <div class="date" id="dateBtn">
+                    <button type="button" class="date" id="dateBtn">
                         📅 Any day
-                    </div>
+                    </button>
+                        <input type="date" id="calendar" style="display: none;">
+                    
 
                 </div>
 
@@ -76,64 +80,70 @@
         </div>
     </header>
 
-    <script src="script.js">
-        const dateBtn = document.getElementById("dateBtn");
-// const calendar = document.getElementById("calendar");
+    <script>
 
-// dateBtn.onclick = () => {
-// calendar.showPicker();
-};
-
-        // calendar.addEventListener("change", function () {
-        const value = this.value;
-        // ...
-        // });
-        if (value) {
-            const date = new Date(value);
-
-            const formatted = date.toLocaleDateString("en-GB", {
-                day: "numeric",
-                month: "short"
-            });
-
-            dateBtn.textContent = "📅 " + formatted;
-        }
-});
 
         /* ===== LOCATION ===== */
-        const locationBtn = document.getElementById("locationBtn");
-        const dropdown = document.getElementById("locationDropdown");
-        const options = document.querySelectorAll(".location-option");
-        const input = document.getElementById("locationInput");
+        /* ===== LOCATION ===== */
+const locationBtn = document.getElementById("locationBtn");
+const dropdown = document.getElementById("locationDropdown");
+const locationWrapper = document.querySelector(".location-wrapper");
+const input = document.getElementById("locationInput");
+const options = document.querySelectorAll(".location-option");
 
-        locationBtn.onclick = () => {
-            dropdown.style.display =
-                dropdown.style.display === "block" ? "none" : "block";
-        };
+const dateBtn = document.getElementById("dateBtn");
+const calendar = document.getElementById("calendar");
 
-        options.forEach(option => {
-            option.onclick = () => {
-                locationBtn.textContent = option.textContent;
-                dropdown.style.display = "none";
-            };
-        });
+/* OPEN / CLOSE LOCATION */
+locationBtn.onclick = () => {
+dropdown.style.display =
+dropdown.style.display === "block" ? "none" : "block";
+};
 
-        input.addEventListener("keypress", function (e) {
-            if (e.key === "Enter") {
-                locationBtn.textContent = "📍 " + input.value;
-                dropdown.style.display = "none";
-            }
-        });
+/* LOCATION OPTIONS */
+options.forEach(option => {
+option.onclick = () => {
+locationBtn.textContent = option.textContent;
+dropdown.style.display = "none";
+};
+});
 
-        document.addEventListener("click", function (e) {
-            if (!document.querySelector(".location-wrapper").contains(e.target)) {
-                dropdown.style.display = "none";
-            }
-        });
+/* CUSTOM LOCATION */
+input.addEventListener("keydown", function (e) {
 
-    </script>
+if (e.key === "Enter" && input.value.trim() !== "") {
 
+locationBtn.textContent = "📍 " + input.value;
+dropdown.style.display = "none";
+}
+});
 
-</body>
+/* CLOSE ON OUTSIDE CLICK */
+document.addEventListener("click", function (e) {
 
-</html>
+if (!locationWrapper.contains(e.target)) {
+dropdown.style.display = "none";
+}
+});
+
+/* DATE */
+dateBtn.onclick = () => {
+calendar.click();
+};
+
+calendar.addEventListener("change", function () {
+
+if (!this.value) {
+dateBtn.textContent = "📅 Any day";
+return;
+}
+
+const date = new Date(this.value);
+
+const formatted = date.toLocaleDateString("en-GB", {
+day: "numeric",
+month: "short"
+});
+
+dateBtn.textContent = "📅 " + formatted;
+});

@@ -8,7 +8,7 @@ body {
     margin: 0;
     background: #f5f5f5;
     overflow-x: hidden;
-    padding-top: 25vh;
+    padding-top: 200px;
 }
 
 /* HEADER */
@@ -20,6 +20,7 @@ body {
     width: 100%;
     background: rgb(64, 181, 228);
     position: fixed;
+    overflow: visible;
     top: 0;
     left: 0;
     z-index: 1000;
@@ -97,6 +98,11 @@ body {
     cursor: pointer;
 }
 
+.location:hover,
+.date:hover {
+    background: #f0f0f0;
+}
+
 .location-option:hover {
     background: #f0f0f0;
 }
@@ -108,6 +114,16 @@ body {
     border-radius: 8px;
     border: 1px solid #ddd;
 }
+ .location,
+ .date {
+    border: none;
+cursor: pointer;
+transition: 0.2s;
+background: white;
+padding: 6px 10px;
+border-radius: 8px;
+font-size: 12px;
+ }
 
 /* ПРАВО */
 .header-right {
@@ -128,8 +144,8 @@ body {
 /* БОЛЬШОЙ ПОИСК */
 .main-search {
     width: 100%;
-    max-width: 500px;
-    padding: 10px;
+    max-width: 600px;
+    padding: 30px;
     border-radius: 12px;
     border: none;
     font-size: 16px;
@@ -137,18 +153,12 @@ body {
 
 /* НИЖНЯЯ ЧАСТЬ ПОИСКА */
 .search-extra {
+    justify-content: center;
     display: flex;
     gap: 10px;
     margin-top: 6px;
 }
 
-.location,
-.date {
-    background: white;
-    padding: 6px 10px;
-    border-radius: 8px;
-    font-size: 12px;
-}
 
 /* КАЛЕНДАРЬ */
 .calendar {
@@ -157,17 +167,16 @@ body {
     gap: 8px;
 }
 
-.calendar-input {
-    display: none;
-}
 
 .search-block {
+
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
 }
 
-@media screen and (min-width: 768) {}
+@media screen and (min-width: 768px) {}
 
 .day {
     background: white;
@@ -182,7 +191,7 @@ body {
 }
 
 /* Адаптивность */
-@media screen and (max-width: 600px) {
+@media screen and (min-width: 768px) {
 
     body {
         padding-top: 100px;
@@ -193,27 +202,18 @@ body {
         min-height: 220px;
     }
 
-    .calendar-input {
-        display: none;
-        position: absolute;
-        top: 100%;
+
+    .header-right {
         margin-top: 8px;
     }
 
-    .right {
-        margin-top: 8px;
-    }
-
-    .search-box {
-        max-width: 250px;
-    }
 }
 
 /* Контейнер подсказок */
 .suggestions {
     position: absolute;
-    top: 100%;
-    left: 0;
+    top: 60px;
+    left: 50%;
     /* чуть ниже поля поиска */
     background: rgb(80, 231, 131);
     border: 1px solid #29aa6e;
@@ -223,6 +223,7 @@ body {
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
     z-index: 1001;
     display: none;
+    transform: translateX(-50%);
     /* скрыто по умолчанию */
 }
 
