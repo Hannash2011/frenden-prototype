@@ -20,8 +20,8 @@ body {
     width: 100%;
     background: linear-gradient(to bottom,
             #ffffff 0%,
-            #f7f3ff 45%,
-            #e9dcff 100%,
+            #d897e6 45%,
+            #d13eca 100%,
         );
     position: fixed;
     overflow: visible;
