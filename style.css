@@ -23,6 +23,9 @@ body {
             #d897e6 45%,
             #d13eca 100%,
         );
+
+    border: 1px solid rgba(0, 0, 0, 0.12) border-radius: 0 0 18px 18px;
+
     position: fixed;
     overflow: visible;
     top: 0;
