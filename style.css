@@ -17,19 +17,21 @@ body {
 .header-page {
     height: 25vh;
     min-height: 200px;
-    width: 100%;
-    background: linear-gradient(to bottom,
-            #ffffff 0%,
-            #d897e6 45%,
-            #d13eca 100%,
-        );
-
-    border: 1px solid rgba(0, 0, 0, 0.12) border-radius: 0 0 18px 18px;
 
     position: fixed;
+    top: 8px;
+    left: 8px;
+    right: 8px;
+
+    background: linear-gradient(to bottom,
+            #ffffff 0%,
+            #f6f0ff 55%,
+            #e4d4ff 100%);
+
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 20px;
+
     overflow: visible;
-    top: 0;
-    left: 0;
     z-index: 1000;
 }
 
