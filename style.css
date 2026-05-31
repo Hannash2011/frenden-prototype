@@ -23,7 +23,10 @@ body {
     left: 8px;
     right: 8px;
 
-    background: red !important;
+    background: linear-gradient(to top,
+            #d6c0ff 0%,
+            #e75fdc 40%,
+            #d408c3 100%);
 
     border: 1px solid rgba(0, 0, 0, 0.15);
     border-radius: 20px;
