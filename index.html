@@ -27,7 +27,7 @@
             <div class="header-top">
 
                 <div class="header-left">
-                    <img src="images/logo.png" class="logo-img">
+                    <img src="images/image.png" class="logo-img">
                     <span class="logo-text">FrenDen</span>
                 </div>
 
@@ -64,8 +64,8 @@
                     <button type="button" class="date" id="dateBtn">
                         📅 Any day
                     </button>
-                        <input type="date" id="calendar" style="display: none;">
-                    
+                    <input type="date" id="calendar" style="display: none;">
+
 
                 </div>
 
@@ -85,65 +85,65 @@
 
         /* ===== LOCATION ===== */
         /* ===== LOCATION ===== */
-const locationBtn = document.getElementById("locationBtn");
-const dropdown = document.getElementById("locationDropdown");
-const locationWrapper = document.querySelector(".location-wrapper");
-const input = document.getElementById("locationInput");
-const options = document.querySelectorAll(".location-option");
+        const locationBtn = document.getElementById("locationBtn");
+        const dropdown = document.getElementById("locationDropdown");
+        const locationWrapper = document.querySelector(".location-wrapper");
+        const input = document.getElementById("locationInput");
+        const options = document.querySelectorAll(".location-option");
 
-const dateBtn = document.getElementById("dateBtn");
-const calendar = document.getElementById("calendar");
+        const dateBtn = document.getElementById("dateBtn");
+        const calendar = document.getElementById("calendar");
 
-/* OPEN / CLOSE LOCATION */
-locationBtn.onclick = () => {
-dropdown.style.display =
-dropdown.style.display === "block" ? "none" : "block";
-};
+        /* OPEN / CLOSE LOCATION */
+        locationBtn.onclick = () => {
+            dropdown.style.display =
+                dropdown.style.display === "block" ? "none" : "block";
+        };
 
-/* LOCATION OPTIONS */
-options.forEach(option => {
-option.onclick = () => {
-locationBtn.textContent = option.textContent;
-dropdown.style.display = "none";
-};
-});
+        /* LOCATION OPTIONS */
+        options.forEach(option => {
+            option.onclick = () => {
+                locationBtn.textContent = option.textContent;
+                dropdown.style.display = "none";
+            };
+        });
 
-/* CUSTOM LOCATION */
-input.addEventListener("keydown", function (e) {
+        /* CUSTOM LOCATION */
+        input.addEventListener("keydown", function (e) {
 
-if (e.key === "Enter" && input.value.trim() !== "") {
+            if (e.key === "Enter" && input.value.trim() !== "") {
 
-locationBtn.textContent = "📍 " + input.value;
-dropdown.style.display = "none";
-}
-});
+                locationBtn.textContent = "📍 " + input.value;
+                dropdown.style.display = "none";
+            }
+        });
 
-/* CLOSE ON OUTSIDE CLICK */
-document.addEventListener("click", function (e) {
+        /* CLOSE ON OUTSIDE CLICK */
+        document.addEventListener("click", function (e) {
 
-if (!locationWrapper.contains(e.target)) {
-dropdown.style.display = "none";
-}
-});
+            if (!locationWrapper.contains(e.target)) {
+                dropdown.style.display = "none";
+            }
+        });
 
-/* DATE */
-dateBtn.onclick = () => {
-calendar.click();
-};
+        /* DATE */
+        dateBtn.onclick = () => {
+            calendar.click();
+        };
 
-calendar.addEventListener("change", function () {
+        calendar.addEventListener("change", function () {
 
-if (!this.value) {
-dateBtn.textContent = "📅 Any day";
-return;
-}
+            if (!this.value) {
+                dateBtn.textContent = "📅 Any day";
+                return;
+            }
 
-const date = new Date(this.value);
+            const date = new Date(this.value);
 
-const formatted = date.toLocaleDateString("en-GB", {
-day: "numeric",
-month: "short"
-});
+            const formatted = date.toLocaleDateString("en-GB", {
+                day: "numeric",
+                month: "short"
+            });
 
-dateBtn.textContent = "📅 " + formatted;
-});
+            dateBtn.textContent = "📅 " + formatted;
+        });
