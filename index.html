@@ -2,20 +2,12 @@
 <html lang="ru">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-
-    <!-- iOS -->
-    <link rel="apple-touch-icon" href="images/image.png">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="default">
-
-    <!-- Android / PWA -->
-
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="images/image.png">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FrenDen</title>
+    <link rel="stylesheet" href="styles.css" />
 </head>
+
 
 <body>
     <header class="header-page">
@@ -77,71 +69,30 @@
 
         </div>
     </header>
+    <main>
 
-    <script>
+        <!-- ГЛАВНАЯ -->
+        <section id="home" class="page active"></section>
+
+        <!-- ПОДКАТЕГОРИИ -->
+        <section id="subcategories" class="page"></section>
+
+        <!-- ЛЮДИ -->
+        <section id="people" class="page"></section>
+
+        <!-- ПРОФИЛЬ -->
+        <section id="profile" class="page"></section>
+
+        <!-- ЧАТ -->
+        <section id="chat" class="page"></section>
+
+    </main>
+
+    <script src="app.js"></script>
 
 
-        /* ===== LOCATION ===== */
-        /* ===== LOCATION ===== */
-        const locationBtn = document.getElementById("locationBtn");
-        const dropdown = document.getElementById("locationDropdown");
-        const locationWrapper = document.querySelector(".location-wrapper");
-        const input = document.getElementById("locationInput");
-        const options = document.querySelectorAll(".location-option");
 
-        const dateBtn = document.getElementById("dateBtn");
-        const calendar = document.getElementById("calendar");
 
-        /* OPEN / CLOSE LOCATION */
-        locationBtn.onclick = () => {
-            dropdown.style.display =
-                dropdown.style.display === "block" ? "none" : "block";
-        };
+</body>
 
-        /* LOCATION OPTIONS */
-        options.forEach(option => {
-            option.onclick = () => {
-                locationBtn.textContent = option.textContent;
-                dropdown.style.display = "none";
-            };
-        });
-
-        /* CUSTOM LOCATION */
-        input.addEventListener("keydown", function (e) {
-
-            if (e.key === "Enter" && input.value.trim() !== "") {
-
-                locationBtn.textContent = "📍 " + input.value;
-                dropdown.style.display = "none";
-            }
-        });
-
-        /* CLOSE ON OUTSIDE CLICK */
-        document.addEventListener("click", function (e) {
-
-            if (!locationWrapper.contains(e.target)) {
-                dropdown.style.display = "none";
-            }
-        });
-
-        /* DATE */
-        dateBtn.onclick = () => {
-            calendar.click();
-        };
-
-        calendar.addEventListener("change", function () {
-
-            if (!this.value) {
-                dateBtn.textContent = "📅 Any day";
-                return;
-            }
-
-            const date = new Date(this.value);
-
-            const formatted = date.toLocaleDateString("en-GB", {
-                day: "numeric",
-                month: "short"
-            });
-
-            dateBtn.textContent = "📅 " + formatted;
-        });
+</html>
