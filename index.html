@@ -10,63 +10,26 @@
 
 
 <body>
-    <header class="header-page">
-        <div class="header-inner">
+    <header class="header">
+        <div class="logo">
+            <span class="logo-icon">✿</span>
+            <span class="logo-text">FrenDen</span>
+        </div>
 
-            <!-- ВЕРХ -->
-            <div class="header-top">
+        <div class="nav">
+            <button class="nav-btn">Explore</button>
+            <button class="nav-btn">Art & Culture</button>
+            <button class="nav-btn">Favorites</button>
+        </div>
 
-                <div class="header-left">
-                    <img src="images/image.png" class="logo-img">
-                    <span class="logo-text">FrenDen</span>
-                </div>
-
-                <div class="header-right">
-                    <div class="chat">💬</div>
-                    <div class="profile">👤</div>
-                    <div class="login">Login</div>
-                </div>
-
+        <div class="header-right">
+            <div class="location-wrapper">
+                <input id="locationInput" placeholder="Where?" />
             </div>
 
-            <!-- ПОИСК -->
-            <div class="search-block">
-
-                <input type="text" class="main-search" placeholder="What shall we do?">
-
-                <!-- НИЖНЯЯ ПОЛОСА -->
-                <div class="search-extra">
-
-                    <!-- LOCATION -->
-                    <div class="location-wrapper">
-                        <button type="button" class="location" id="locationBtn">
-                            🌍 Anywhere
-                        </button>
-                        <div class="location-dropdown" id="locationDropdown">
-                            <div class="location-option">🌍 Anywhere</div>
-                            <div class="location-option">📍 Near me</div>
-
-                            <input type="text" id="locationInput" placeholder="Enter city or country...">
-                        </div>
-                    </div>
-
-                    <!-- DATE -->
-                    <button type="button" class="date" id="dateBtn">
-                        📅 Any day
-                    </button>
-                    <input type="date" id="calendar" style="display: none;">
-
-
-                </div>
-
-                <!-- скрытый календарь -->
-
-
-                <!-- подсказки -->
-                <div class="suggestions" id="suggestions"></div>
-
-            </div>
-
+            <button class="profile-btn" id="profileBtn">
+                <span class="profile-icon">🙂</span>
+            </button>
         </div>
     </header>
     <main>
