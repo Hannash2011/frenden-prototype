@@ -1,97 +1,84 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>FrenDen</title>
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="style.css" />
 </head>
 
-
 <body>
-    <header class="header-page">
-        <div class="header-inner">
 
-            <!-- ВЕРХ -->
-            <div class="header-top">
+    <header class="header">
 
-                <div class="header-left">
-                    <img src="images/image.png" class="logo-img">
-                    <span class="logo-text">FrenDen</span>
-                </div>
-
-                <div class="header-right">
-                    <div class="chat">💬</div>
-                    <div class="profile">👤</div>
-                    <div class="login">Login</div>
-                </div>
-
-            </div>
-
-            <!-- ПОИСК -->
-            <div class="search-block">
-
-                <input type="text" class="main-search" placeholder="What shall we do?">
-
-                <!-- НИЖНЯЯ ПОЛОСА -->
-                <div class="search-extra">
-
-                    <!-- LOCATION -->
-                    <div class="location-wrapper">
-                        <button type="button" class="location" id="locationBtn">
-                            🌍 Anywhere
-                        </button>
-                        <div class="location-dropdown" id="locationDropdown">
-                            <div class="location-option">🌍 Anywhere</div>
-                            <div class="location-option">📍 Near me</div>
-
-                            <input type="text" id="locationInput" placeholder="Enter city or country...">
-                        </div>
-                    </div>
-
-                    <!-- DATE -->
-                    <button type="button" class="date" id="dateBtn">
-                        📅 Any day
-                    </button>
-                    <input type="date" id="calendar" style="display: none;">
-
-
-                </div>
-
-                <!-- скрытый календарь -->
-
-
-                <!-- подсказки -->
-                <div class="suggestions" id="suggestions"></div>
-
-            </div>
-
+        <div class="header-left">
+            <div class="logo">FrenDen</div>
         </div>
+
+        <div class="header-center">
+            <div class="search">
+                <input type="text" placeholder="Search experiences..." />
+                <button class="search-btn">⌕</button>
+            </div>
+        </div>
+
+        <div class="header-right">
+            <button class="nav-btn">Create</button>
+            <button class="icon-btn">🌿</button>
+            <button class="profile">🙂</button>
+        </div>
+
     </header>
-    <main>
 
-        <!-- ГЛАВНАЯ -->
-        <section id="home" class="page active"></section>
 
-        <!-- ПОДКАТЕГОРИИ -->
-        <section id="subcategories" class="page"></section>
+    <main class="main">
 
-        <!-- ЛЮДИ -->
-        <section id="people" class="page"></section>
+        <!-- HERO -->
+        <section class="hero">
+            <h1>Discover calm experiences</h1>
+            <p>Nature, art, culture and quiet places around you</p>
+        </section>
 
-        <!-- ПРОФИЛЬ -->
-        <section id="profile" class="page"></section>
+        <!-- FILTERS -->
+        <section class="filters">
+            <button>Nature</button>
+            <button>Art</button>
+            <button>Culture</button>
+            <button>Food</button>
+            <button>Calm</button>
+        </section>
 
-        <!-- ЧАТ -->
-        <section id="chat" class="page"></section>
+        <!-- GRID -->
+        <section class="grid">
+
+            <div class="card">
+                <div class="card-img"></div>
+                <div class="card-title">Lavender Fields Walk</div>
+                <div class="card-sub">France · Nature · 2h</div>
+            </div>
+
+            <div class="card">
+                <div class="card-img"></div>
+                <div class="card-title">Modern Art Gallery</div>
+                <div class="card-sub">Oslo · Art · 1.5h</div>
+            </div>
+
+            <div class="card">
+                <div class="card-img"></div>
+                <div class="card-title">Silent Café Space</div>
+                <div class="card-sub">Local · Calm · Anytime</div>
+            </div>
+
+            <div class="card">
+                <div class="card-img"></div>
+                <div class="card-title">Forest Retreat</div>
+                <div class="card-sub">Norway · Nature · Day trip</div>
+            </div>
+
+        </section>
 
     </main>
-
-    <script src="app.js"></script>
-
-
-
 
 </body>
 
