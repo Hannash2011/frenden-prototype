@@ -215,7 +215,7 @@ body {
 
     /* Последняя карточка "Other" по центру */
     .other-card {
-        grid-column: 1 / -1;
+        grid-column: auto;
         max-width: 320px;
         width: 100%;
         justify-self: center;
