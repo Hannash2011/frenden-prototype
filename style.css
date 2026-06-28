@@ -164,6 +164,7 @@ body {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 18px;
+    jastify-items: center;
 }
 
 /* CARD */
@@ -174,6 +175,8 @@ body {
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
     transition: 0.2s;
     cursor: pointer;
+    width: 100%;
+    max-width: 260px;
 }
 
 .card:hover {
