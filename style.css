@@ -7,8 +7,35 @@
 
 /* BACKGROUND */
 body {
-    background: linear-gradient(180deg, #f7f1ff, #edf8f2);
-    color: #2b2b2b;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background: #F6F1FF;
+    position: relative;
+}
+
+/* затемнение по углам */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+
+    /* мягкая виньетка */
+    background: radial-gradient(ellipse at center,
+            rgba(246, 241, 255, 0) 0%,
+            rgba(246, 241, 255, 0.2) 55%,
+            rgba(60, 40, 90, 0.18) 100%);
+}
+
+/* ВСЁ содержимое выше фона */
+header,
+main,
+footer,
+section {
+    position: relative;
+    z-index: 1;
 }
 
 /* HEADER */
