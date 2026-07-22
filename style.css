@@ -317,6 +317,17 @@ FOOTER
     font-size: 14px;
 }
 
+.logo,
+.footer-logo-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.logo:hover,
+.footer-logo-link:hover {
+    opacity: 0.9;
+}
+
 /* RESPONSIVE */
 @media (max-width: 768px) {
 
