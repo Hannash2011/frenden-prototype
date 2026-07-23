@@ -60,26 +60,32 @@ section {
     justify-content: flex-start;
 }
 
-logo {
-    font-size: 34px;
-    font-weight: 800;
-    letter-spacing: 1px;
-    text-decoration: none;
+.logo {
+font-size: 34px;
+font-weight: 800;
+letter-spacing: 1px;
+text-decoration: none;
 
-    background: linear-gradient(135deg,
-            #8C3FB8 0%,
-            #B14DDB 45%,
-            #D16EFF 100%);
+background: linear-gradient(
+135deg,
+#8C3FB8 0%,
+#B14DDB 45%,
+#E052C5 100%
+);
 
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+background-clip: text;
+-webkit-background-clip: text;
 
-    transition: .3s;
+color: transparent;
+-webkit-text-fill-color: transparent;
+
+display: inline-block;
+transition: .3s;
 }
 
 .logo:hover {
-    transform: scale(1.05);
-    filter: brightness(1.08);
+transform: scale(1.05);
+filter: brightness(1.08);
 }
 
 /* CENTER SEARCH */
@@ -333,10 +339,13 @@ FOOTER
     font-size: 14px;
 }
 
-.logo,
+.logo {
+text-decoration: none;
+}
+
 .footer-logo-link {
-    text-decoration: none;
-    color: inherit;
+text-decoration: none;
+color: inherit;
 }
 
 .logo:hover,
