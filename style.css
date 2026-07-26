@@ -228,20 +228,24 @@ section {
 
 .intro {
     text-align: center;
-    margin: 50px auto 35px;
+    margin: 45px auto 35px;
     max-width: 700px;
 }
 
 .intro h1 {
-    font-size: 34px;
-    font-weight: 700;
-    color: #3f355a;
+    font-family: "Caveat", cursive;
+    font-size: 42px;
+    font-weight: 500;
+    color: #9B6BC6;
+    line-height: 1.15;
 }
 
 .intro p {
-    margin-top: 12px;
-    font-size: 17px;
-    color: #777;
+    margin-top: 14px;
+    font-family: "Quicksand", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #7E718C;
 }
 
 /* CARD */
