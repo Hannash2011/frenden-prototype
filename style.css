@@ -226,6 +226,24 @@ section {
     gap: 18px;
 }
 
+.intro {
+    text-align: center;
+    margin: 50px auto 35px;
+    max-width: 700px;
+}
+
+.intro h1 {
+    font-size: 34px;
+    font-weight: 700;
+    color: #3f355a;
+}
+
+.intro p {
+    margin-top: 12px;
+    font-size: 17px;
+    color: #777;
+}
+
 /* CARD */
 .card {
     background: white;
