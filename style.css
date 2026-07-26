@@ -256,7 +256,8 @@ section {
     transition: 0.2s;
     cursor: pointer;
     width: 260px;
-
+    text-decoration: none;
+    color: inherit;
 }
 
 .card:hover {
