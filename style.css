@@ -430,3 +430,69 @@ FOOTER
 
 
 }
+
+/* ===========================
+USER CARD
+=========================== */
+
+.user-card {
+    background: white;
+    border-radius: 18px;
+    padding: 18px;
+    width: 100%;
+    max-width: 700px;
+    margin: 18px auto;
+
+    box-shadow: 0 8px 24px rgba(0, 0, 0, .06);
+
+    transition: .25s;
+    cursor: pointer;
+}
+
+.user-card:hover {
+    transform: translateY(-4px);
+}
+
+.user-top {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.avatar {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #D5B5FF, #BDE9D6);
+    flex-shrink: 0;
+}
+
+.user-info h2 {
+    font-size: 22px;
+    color: #54466A;
+}
+
+.user-info p {
+    margin-top: 4px;
+    color: #8A7E98;
+    font-size: 14px;
+}
+
+.status {
+    margin-left: auto;
+    color: #3BAF63;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.user-text {
+    margin-top: 18px;
+    color: #5F526F;
+    line-height: 1.6;
+}
+
+.user-time {
+    margin-top: 14px;
+    color: #9B6BC6;
+    font-weight: 600;
+}
