@@ -510,6 +510,9 @@ USER CARD
 
     cursor: pointer;
     transition: .25s;
+    display: block;
+    text-decoration: none;
+    color: inherit;
 }
 
 .user-card:hover {
