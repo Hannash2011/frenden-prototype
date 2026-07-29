@@ -496,3 +496,107 @@ USER CARD
     color: #9B6BC6;
     font-weight: 600;
 }
+
+/* USER CARD */
+
+.user-card {
+    background: white;
+    border-radius: 18px;
+    padding: 20px;
+    max-width: 650px;
+    margin: 25px auto;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+
+    cursor: pointer;
+    transition: .25s;
+}
+
+.user-card:hover {
+    transform: translateY(-4px);
+}
+
+
+.user-top {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+
+.avatar {
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+
+    background: linear-gradient(135deg, #d8b7ff, #bfe8d3);
+}
+
+
+.user-info h2 {
+    margin: 0;
+    color: #554566;
+    font-size: 21px;
+}
+
+
+.user-info p {
+    margin-top: 5px;
+    color: #8b8098;
+    font-size: 14px;
+}
+
+
+.status {
+    margin-left: auto;
+    font-size: 13px;
+    color: #45a85b;
+}
+
+
+.user-title {
+    margin-top: 20px;
+
+    font-size: 18px;
+    font-weight: 600;
+
+    color: #6c4b86;
+}
+
+
+.user-text {
+    margin-top: 10px;
+
+    color: #62576c;
+    line-height: 1.5;
+}
+
+
+.user-time {
+    margin-top: 15px;
+
+    color: #9b6bc6;
+    font-weight: 600;
+}
+
+
+.tags {
+    display: flex;
+    gap: 8px;
+    margin-top: 18px;
+    flex-wrap: wrap;
+}
+
+
+.tags span {
+
+    background: #f5edff;
+
+    padding: 6px 12px;
+
+    border-radius: 20px;
+
+    font-size: 13px;
+
+    color: #76558e;
+}
