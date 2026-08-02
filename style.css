@@ -670,7 +670,8 @@ USER CARD
 
 
 .profile-about,
-.profile-interests .profile-languages {
+.profile-interests,
+.profile-languages {
 
     margin-top: 30px;
 
