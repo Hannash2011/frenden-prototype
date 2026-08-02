@@ -718,3 +718,19 @@ USER CARD
     background: #8654b5;
 
 }
+
+.back-link {
+    max-width: 600px;
+    margin: 20px auto 10px;
+}
+
+.back-link a {
+    text-decoration: none;
+    color: #9B6BC6;
+    font-weight: 600;
+    transition: .2s;
+}
+
+.back-link a:hover {
+    color: #7C49B3;
+}
