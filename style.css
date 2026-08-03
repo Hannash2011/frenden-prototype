@@ -816,3 +816,25 @@ USER CARD
     padding: 6px 14px;
     border-radius: 20px;
 }
+
+.distance {
+    margin-top: 6px;
+    color: #8b8098;
+    font-size: 15px;
+}
+
+.activity-time {
+    margin-top: 12px;
+
+    display: inline-block;
+
+    background: #F5EDFF;
+    color: #8C3FB8;
+
+    padding: 8px 16px;
+
+    border-radius: 20px;
+
+    font-size: 15px;
+    font-weight: 600;
+}
