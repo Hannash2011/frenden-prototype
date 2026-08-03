@@ -695,25 +695,25 @@ USER CARD
 
 
 .meet-btn {
+    display: inline-block;
 
     margin-top: 35px;
 
     padding: 12px 30px;
 
     border: none;
-
     border-radius: 30px;
 
-    background: #9b6bc6;
-
+    background: #9B6BC6;
     color: white;
 
+    text-decoration: none;
+
     font-size: 16px;
+    font-weight: 600;
 
     cursor: pointer;
-
 }
-
 
 .meet-btn:hover {
 
