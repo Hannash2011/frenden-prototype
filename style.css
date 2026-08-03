@@ -679,6 +679,9 @@ USER CARD
 
 }
 
+.profile-activities {
+    margin-top: 35px;
+}
 
 .profile-about h2,
 .profile-activities h2,
@@ -693,6 +696,10 @@ USER CARD
 }
 
 
+.profile-about p {
+    line-height: 1.6;
+    margin-top: 10px;
+}
 
 .meet-btn {
     display: inline-block;
