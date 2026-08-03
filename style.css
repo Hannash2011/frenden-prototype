@@ -670,7 +670,7 @@ USER CARD
 
 
 .profile-about,
-.profile-interests,
+.profile-activities,
 .profile-languages {
 
     margin-top: 30px;
@@ -681,7 +681,7 @@ USER CARD
 
 
 .profile-about h2,
-.profile-interests h2,
+.profile-activities h2,
 .profile-languages h3 {
 
     color: #6c4b86;
