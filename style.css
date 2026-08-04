@@ -937,3 +937,28 @@ USER CARD
     font-size: 12px;
 
 }
+
+.chat-page .header-center {
+    display: none;
+}
+
+.chat-page .header {
+    grid-template-columns: 1fr auto;
+}
+
+/* ===========================
+CHAT PAGE
+=========================== */
+
+.chat-page .header {
+    grid-template-columns: 1fr auto;
+}
+
+.chat-page .header-center {
+    display: none;
+}
+
+.chat-page .nav-btn,
+.chat-page .icon-btn {
+    display: none;
+}
