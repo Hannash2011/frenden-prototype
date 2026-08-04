@@ -846,72 +846,94 @@ USER CARD
     font-weight: 600;
 }
 
+/* CHAT HEADER */
+
 .chat-header {
-    display: flex;
-    align-items: center;
-    gap: 15px;
 
     max-width: 700px;
     margin: 30px auto;
 
     background: white;
-    padding: 15px 20px;
 
-    border-radius: 18px;
+    border-radius: 20px;
 
-    box-shadow: 0 6px 18px rgba(0, 0, 0, .06);
+    padding: 18px 22px;
+
+    display: flex;
+    align-items: center;
+    gap: 18px;
+
+    box-shadow: 0 8px 24px rgba(0, 0, 0, .06);
+
 }
 
 .chat-avatar {
-    width: 55px;
-    height: 55px;
+
+    width: 60px;
+    height: 60px;
 
     border-radius: 50%;
     overflow: hidden;
 
     flex-shrink: 0;
+
 }
 
 .chat-avatar img {
+
     width: 100%;
     height: 100%;
+
     object-fit: cover;
+
 }
 
-.chat-header h2 {
-    margin: 0;
-    color: #554566;
-    font-size: 20px;
-}
+.chat-info {
 
-.chat-header p {
-    margin-top: 5px;
-    color: #8b8098;
-    font-size: 14px;
-}
-
-.chat-user {
     display: flex;
     flex-direction: column;
     gap: 6px;
+
+}
+
+.chat-info h2 {
+
+    margin: 0;
+
+    color: #554566;
+
+    font-size: 22px;
+
 }
 
 .meeting-status {
-    color: #7C5AC7;
+
+    color: #8C3FB8;
+
     font-size: 14px;
+
     font-weight: 600;
+
 }
 
-.chat-languages {
+.chat-badges {
+
     display: flex;
     gap: 8px;
     flex-wrap: wrap;
+
 }
 
-.chat-languages span {
-    background: #F4ECFF;
-    color: #76558E;
+.chat-badges span {
+
+    background: #F5EDFF;
+
+    color: #7B5A94;
+
     padding: 4px 10px;
-    border-radius: 16px;
+
+    border-radius: 20px;
+
     font-size: 12px;
+
 }
