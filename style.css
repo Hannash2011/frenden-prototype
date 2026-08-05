@@ -966,16 +966,17 @@ CHAT PAGE
 .chat-messages {
     display: flex;
     flex-direction: column;
-    gap: 16px;
-    padding: 30px;
+    gap: 18px;
+    padding: 30px 60px;
 }
 
 .message {
-    max-width: 65%;
+    max-width: 55%;
     padding: 12px 18px;
-    border-radius: 20px;
+    border-radius: 18px;
     font-size: 16px;
     line-height: 1.4;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
 .message-sent {
@@ -988,8 +989,4 @@ CHAT PAGE
     align-self: flex-start;
     background: #ffffff;
     border-bottom-left-radius: 5px;
-}
-
-.chat-messages {
-    background: pink !important;
 }
