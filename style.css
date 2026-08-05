@@ -989,3 +989,7 @@ CHAT PAGE
     background: #ffffff;
     border-bottom-left-radius: 5px;
 }
+
+.chat-messages {
+    background: pink !important;
+}
