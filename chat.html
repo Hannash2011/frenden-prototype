@@ -105,6 +105,7 @@
         const messageInput = document.querySelector(".chat-input input");
         const sendButton = document.querySelector(".send-button");
         const chatMessages = document.querySelector(".chat-messages");
+        const suggestTimeButton = document.querySelector("#suggest-time");
 
         function sendMessage() {
             const text = messageInput.value.trim();
@@ -130,7 +131,13 @@
                 sendMessage();
             }
         });
+
+        suggestTimeButton.addEventListener("click", function () {
+            messageInput.value = "How about today after 18:00? ☕";
+            sendMessage();
+        });
     </script>
+
 
 </body>
 
