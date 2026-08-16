@@ -105,6 +105,8 @@
         const messageInput = document.querySelector(".chat-input input");
         const sendButton = document.querySelector(".send-button");
         const chatMessages = document.querySelector(".chat-messages");
+        const findPlaceButton = document.querySelector("#find-place");
+        const placeMap = document.querySelector("#place-map");
         const suggestTimeButton = document.querySelector("#suggest-time");
 
         function sendMessage() {
@@ -135,6 +137,13 @@
         suggestTimeButton.addEventListener("click", function () {
             messageInput.value = "How about today after 18:00? ☕";
             sendMessage();
+        });
+        findPlaceButton.addEventListener("click", function () {
+            if (placeMap.style.display === "block") {
+                placeMap.style.display = "none";
+            } else {
+                placeMap.style.display = "block";
+            }
         });
     </script>
 
