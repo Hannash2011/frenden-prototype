@@ -169,6 +169,33 @@
                 placeOptions.style.display = "block";
             }
         });
+
+        const placeButtons = document.querySelectorAll(".place-option");
+
+        placeButtons.forEach(function (button) {
+
+            button.addEventListener("click", function () {
+
+                const placeName = button.dataset.place;
+
+                const placeMessage = document.createElement("div");
+
+                placeMessage.className = "message message-sent place-message";
+
+                placeMessage.innerHTML = `
+<strong>📍 ${placeName}</strong>
+<small>Suggested meeting place</small>
+`;
+
+                chatMessages.appendChild(placeMessage);
+
+                placeOptions.style.display = "none";
+
+                messageInput.focus();
+            });
+
+        });
+
     </script>
 
 
