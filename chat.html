@@ -88,6 +88,35 @@
 
             </div>
 
+            <div class="place-options" id="place-options">
+
+                <div class="place-title">
+                    📍 Choose a place
+                </div>
+
+                <button class="place-option" data-place="☕ Coffee House">
+                    ☕ Coffee House
+                    <span>Café</span>
+                </button>
+
+                <button class="place-option" data-place="🌳 City Park">
+                    🌳 City Park
+                    <span>Park</span>
+                </button>
+
+                <button class="place-option" data-place="🎬 Cinema">
+                    🎬 Cinema
+                    <span>Cinema</span>
+                </button>
+
+                <button class="place-option" data-place="🏋️ Fitness Center">
+                    🏋️ Fitness Center
+                    <span>Fitness</span>
+                </button>
+
+            </div>
+
+
             <div class="place-map" id="place-map">
             </div>
 
@@ -106,7 +135,7 @@
         const sendButton = document.querySelector(".send-button");
         const chatMessages = document.querySelector(".chat-messages");
         const findPlaceButton = document.querySelector("#find-place");
-        const placeMap = document.querySelector("#place-map");
+        const placeOptions = document.querySelector("#place-options");
 
         function sendMessage() {
             const text = messageInput.value.trim();
@@ -134,10 +163,10 @@
         });
 
         findPlaceButton.addEventListener("click", function () {
-            if (placeMap.style.display === "block") {
-                placeMap.style.display = "none";
+            if (placeOptions.style.display === "block") {
+                placeOptions.style.display = "none";
             } else {
-                placeMap.style.display = "block";
+                placeOptions.style.display = "block";
             }
         });
     </script>

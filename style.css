@@ -1020,6 +1020,52 @@ CHAT AREA
     border-top: 1px solid #eeeeee;
 }
 
+.place-options {
+    display: none;
+    margin-top: 18px;
+    padding: 18px;
+    background: #faf8fd;
+    border-radius: 18px;
+}
+
+.place-title {
+    margin-bottom: 14px;
+    color: #6c4b86;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.place-option {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 13px 15px;
+    margin-top: 8px;
+
+    border: none;
+    border-radius: 14px;
+
+    background: white;
+    color: #554566;
+
+    font-size: 15px;
+    text-align: left;
+
+    cursor: pointer;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.04);
+}
+
+.place-option:hover {
+    background: #f5edff;
+}
+
+.place-option span {
+    color: #9b6bc6;
+    font-size: 12px;
+}
+
 .quick-actions button {
     border: none;
     background: transparent;
@@ -1039,6 +1085,7 @@ CHAT AREA
 .quick-actions button:hover {
     background: #f5f1fa;
 }
+
 
 
 /* MESSAGE INPUT */
