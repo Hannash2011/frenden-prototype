@@ -1167,3 +1167,31 @@ CHAT AREA
     color: #8b8098;
     font-size: 13px;
 }
+
+.place-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.place-actions button {
+    border: none;
+    border-radius: 14px;
+    padding: 7px 12px;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.accept-place {
+    background: #e8f5e9;
+    color: #3f7d4d;
+}
+
+.another-place {
+    background: #f5edff;
+    color: #76558e;
+}
+
+.place-actions button:hover {
+    transform: translateY(-1px);
+}

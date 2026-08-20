@@ -184,7 +184,13 @@
 
                 placeMessage.innerHTML = `
 <strong>📍 ${placeName}</strong>
+<small>Café</small>
 <small>Suggested meeting place</small>
+
+<div class="place-actions">
+<button class="accept-place">Accept</button>
+<button class="another-place">Suggest another</button>
+</div>
 `;
 
                 chatMessages.appendChild(placeMessage);
