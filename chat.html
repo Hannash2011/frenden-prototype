@@ -184,7 +184,6 @@
 
                 placeMessage.innerHTML = `
 <strong>📍 ${placeName}</strong>
-<small>Café</small>
 <small>Suggested meeting place</small>
 
 <div class="place-actions">
@@ -201,6 +200,7 @@
             });
 
         });
+
         document.addEventListener("click", function (event) {
 
             if (event.target.classList.contains("accept-place")) {
@@ -212,6 +212,19 @@
 <small>✓ Meeting place confirmed</small>
 `;
 
+            }
+
+        });
+        document.addEventListener("click", function (event) {
+
+            if (event.target.classList.contains("another-place")) {
+
+                placeOptions.style.display = "block";
+
+                placeOptions.scrollIntoView({
+                    behavior: "smooth",
+                    block: "nearest"
+                });
             }
 
         });
