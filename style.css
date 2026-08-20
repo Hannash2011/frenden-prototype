@@ -1146,3 +1146,24 @@ CHAT AREA
     overflow: hidden;
     background: #f3eff7;
 }
+
+.place-message {
+    background: #ffffff;
+    border: 1px solid #eadff3;
+    border-radius: 18px;
+    padding: 14px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.place-message strong {
+    color: #6c4b86;
+    font-size: 16px;
+}
+
+.place-message small {
+    color: #8b8098;
+    font-size: 13px;
+}
