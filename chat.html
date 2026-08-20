@@ -201,6 +201,20 @@
             });
 
         });
+        document.addEventListener("click", function (event) {
+
+            if (event.target.classList.contains("accept-place")) {
+
+                const placeMessage = event.target.closest(".place-message");
+
+                placeMessage.innerHTML = `
+<strong>📍 ☕ Coffee House</strong>
+<small>✓ Meeting place confirmed</small>
+`;
+
+            }
+
+        });
 
     </script>
 
