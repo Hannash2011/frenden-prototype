@@ -206,15 +206,17 @@
             if (event.target.classList.contains("accept-place")) {
 
                 const placeMessage = event.target.closest(".place-message");
+                const placeName = placeMessage.querySelector("strong").textContent;
 
                 placeMessage.innerHTML = `
-<strong>📍 ☕ Coffee House</strong>
+<strong>${placeName}</strong>
 <small>✓ Meeting place confirmed</small>
 `;
 
             }
 
         });
+
         document.addEventListener("click", function (event) {
 
             if (event.target.classList.contains("another-place")) {
