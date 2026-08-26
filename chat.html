@@ -183,15 +183,15 @@
                 const placeMessage = document.createElement("div");
 
                 placeMessage.innerHTML = `
-<div class="place-name">${placeName}</div>
-<div class="place-type">${placeType}</div>
-<small>Suggested meeting place</small>
-
-<div class="place-actions">
-<button class="accept-place">Accept</button>
-<button class="another-place">Suggest another</button>
-</div>
-`;
+    <div class="place-name">${placeName}</div>
+    <div class="place-type">${placeType}</div>
+    <small>Suggested meeting place</small>
+    
+    <div class="place-actions">
+    <button class="accept-place">Accept</button>
+    <button class="another-place">Suggest another</button>
+    </div>
+    `;
 
                 chatMessages.appendChild(placeMessage);
 
@@ -210,9 +210,9 @@
                 const placeName = placeMessage.querySelector(".place-name").textContent;
 
                 placeMessage.innerHTML = `
-<div class="place-name">${placeName}</div>
-<div class="place-confirmed">✓ Meeting place confirmed</div>
-`;
+    <div class="place-name">${placeName}</div>
+    <div class="place-confirmed">✓ Meeting place confirmed</div>
+    `;
 
             }
 
@@ -233,7 +233,6 @@
         });
 
     </script>
-
 
 </body>
 
