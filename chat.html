@@ -207,11 +207,11 @@
             if (event.target.classList.contains("accept-place")) {
 
                 const placeMessage = event.target.closest(".place-message");
-                const placeName = placeMessage.querySelector("place-name").textContent;
+                const placeName = placeMessage.querySelector(".place-name").textContent;
 
                 placeMessage.innerHTML = `
-                    < strong > ${placeName}</strong >
-                        <small>✓ Meeting place confirmed</small>
+<div class="place-name">${placeName}</div>
+<div class="place-confirmed">✓ Meeting place confirmed</div>
 `;
 
             }
