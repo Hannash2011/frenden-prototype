@@ -182,17 +182,16 @@
 
                 const placeMessage = document.createElement("div");
 
-                placeMessage.className = "message message-sent place-message";
                 placeMessage.innerHTML = `
-<strong>${placeName}</strong>
-<small>${placeType}</small>
+<div class="place-name">${placeName}</div>
+<div class="place-type">${placeType}</div>
 <small>Suggested meeting place</small>
 
 <div class="place-actions">
 <button class="accept-place">Accept</button>
 <button class="another-place">Suggest another</button>
 </div>
-                `;
+`;
 
                 chatMessages.appendChild(placeMessage);
 
@@ -208,7 +207,7 @@
             if (event.target.classList.contains("accept-place")) {
 
                 const placeMessage = event.target.closest(".place-message");
-                const placeName = placeMessage.querySelector("strong").textContent;
+                const placeName = placeMessage.querySelector("place-name").textContent;
 
                 placeMessage.innerHTML = `
                     < strong > ${placeName}</strong >
