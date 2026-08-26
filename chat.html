@@ -94,22 +94,22 @@
                     📍 Choose a place
                 </div>
 
-                <button class="place-option" data-place="☕ Coffee House">
+                <button class="place-option" data-place="☕ Coffee House" data-type="Café">
                     ☕ Coffee House
                     <span>Café</span>
                 </button>
 
-                <button class="place-option" data-place="🌳 City Park">
+                <button class="place-option" data-place="🌳 City Park" data-type="Park">
                     🌳 City Park
                     <span>Park</span>
                 </button>
 
-                <button class="place-option" data-place="🎬 Cinema">
+                <button class="place-option" data-place="🎬 Cinema" data-type="Cinema">
                     🎬 Cinema
                     <span>Cinema</span>
                 </button>
 
-                <button class="place-option" data-place="🏋️ Fitness Center">
+                <button class="place-option" data-place="🏋️ Fitness Center" data-type="Fitness">
                     🏋️ Fitness Center
                     <span>Fitness</span>
                 </button>
@@ -178,19 +178,24 @@
 
                 const placeName = button.dataset.place;
 
+                const placeType = button.dataset.type;
+
                 const placeMessage = document.createElement("div");
 
                 placeMessage.className = "message message-sent place-message";
 
                 placeMessage.innerHTML = `
-<strong>📍 ${placeName}</strong>
+
+placeMessage.innerHTML = `
+                    < strong > ${ placeName }</strong >
+<small>${placeType}</small>
 <small>Suggested meeting place</small>
 
 <div class="place-actions">
 <button class="accept-place">Accept</button>
 <button class="another-place">Suggest another</button>
 </div>
-`;
+                `;
 
                 chatMessages.appendChild(placeMessage);
 
@@ -209,8 +214,8 @@
                 const placeName = placeMessage.querySelector("strong").textContent;
 
                 placeMessage.innerHTML = `
-<strong>${placeName}</strong>
-<small>✓ Meeting place confirmed</small>
+                    < strong > ${ placeName }</strong >
+                        <small>✓ Meeting place confirmed</small>
 `;
 
             }
