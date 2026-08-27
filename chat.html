@@ -94,22 +94,23 @@
                     📍 Choose a place
                 </div>
 
-                <button class="place-option" data-place="☕ Coffee House" data-type="Café">
+                <button class="place-option" data-place="☕ Coffee House" data-type="Café" data-address="Kristiansund">
                     ☕ Coffee House
                     <span>Café</span>
                 </button>
 
-                <button class="place-option" data-place="🌳 City Park" data-type="Park">
+                <button class="place-option" data-place="🌳 City Park" data-type="Park" data-address="Kristiansund">
                     🌳 City Park
                     <span>Park</span>
                 </button>
 
-                <button class="place-option" data-place="🎬 Cinema" data-type="Cinema">
+                <button class="place-option" data-place="🎬 Cinema" data-type="Cinema" data-address="Kristiansund">
                     🎬 Cinema
                     <span>Cinema</span>
                 </button>
 
-                <button class="place-option" data-place="🏋️ Fitness Center" data-type="Fitness">
+                <button class="place-option" data-place="🏋️ Fitness Center" data-type="Fitness"
+                    data-address="Kristiansund">
                     🏋️ Fitness Center
                     <span>Fitness</span>
                 </button>
@@ -180,6 +181,8 @@
 
                 const placeType = button.dataset.type;
 
+                const placeAddress = button.dataset.address;
+
                 const placeMessage = document.createElement("div");
 
                 placeMessage.className = "message message-sent place-message";
@@ -187,8 +190,9 @@
                 placeMessage.innerHTML = `
     <div class="place-name">${placeName}</div>
     <div class="place-type">${placeType}</div>
+<small>📍 ${placeAddress}</small>
+
     <small>Suggested meeting place</small>
-    
     <div class="place-actions">
     <button class="accept-place">Accept</button>
     <button class="another-place">Suggest another</button>
