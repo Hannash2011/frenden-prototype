@@ -94,23 +94,26 @@
                     📍 Choose a place
                 </div>
 
-                <button class="place-option" data-place="☕ Coffee House" data-type="Café" data-address="Kristiansund">
+                <button class="place-option" data-place="☕ Coffee House" data-type="Café" data-address="Kristiansund"
+                    data-lat="63.1109" data-lng="7.7279">
                     ☕ Coffee House
                     <span>Café</span>
                 </button>
 
-                <button class="place-option" data-place="🌳 City Park" data-type="Park" data-address="Kristiansund">
+                <button class="place-option" data-place="🌳 City Park" data-type="Park" data-address="Kristiansund"
+                    data-lat="63.1102" data-lng="7.7287">
                     🌳 City Park
                     <span>Park</span>
                 </button>
 
-                <button class="place-option" data-place="🎬 Cinema" data-type="Cinema" data-address="Kristiansund">
+                <button class="place-option" data-place="🎬 Cinema" data-type="Cinema" data-address="Kristiansund"
+                    data-lat="63.1105" data-lng="7.7292">
                     🎬 Cinema
                     <span>Cinema</span>
                 </button>
 
                 <button class="place-option" data-place="🏋️ Fitness Center" data-type="Fitness"
-                    data-address="Kristiansund">
+                    data-address="Kristiansund" data-lat="63.1107" data-lng="7.7284">
                     🏋️ Fitness Center
                     <span>Fitness</span>
                 </button>
@@ -185,7 +188,14 @@
 
                 const placeMessage = document.createElement("div");
 
+                const placeLat = button.dataset.lat;
+
+                const placeLng = button.dataset.lng;
+
                 placeMessage.className = "message message-sent place-message";
+
+                placeMessage.dataset.lat = placeLat;
+                placeMessage.dataset.lng = placeLng;
 
                 placeMessage.innerHTML = `
     <div class="place-name">${placeName}</div>
@@ -214,6 +224,9 @@
 
                 const placeMessage = event.target.closest(".place-message");
                 const placeName = placeMessage.querySelector(".place-name").textContent;
+
+                const placeLat = placeMessage.dataset.lat;
+                const placeLng = placeMessage.dataset.lng;
 
                 placeMessage.innerHTML = `
     <div class="place-name">${placeName}</div>
