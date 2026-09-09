@@ -1230,3 +1230,47 @@ CHAT AREA
 
     opacity: .8;
 }
+
+/* MAP MOCKUP — ROADS & MARKERS */
+
+.place-map::after {
+    content: "";
+    position: absolute;
+    width: 65%;
+    height: 18px;
+    left: 10%;
+    top: 42%;
+    background: rgba(255, 255, 255, 0.8);
+    transform: rotate(-18deg);
+    border-radius: 20px;
+    box-shadow:
+        70px 85px 0 4px rgba(255, 255, 255, 0.65),
+        180px -65px 0 2px rgba(255, 255, 255, 0.6);
+}
+
+/* map pins */
+
+.map-pin {
+    position: absolute;
+    z-index: 3;
+
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+
+    background: #a85ac7;
+    border: 3px solid white;
+
+    box-shadow: 0 3px 10px rgba(80, 40, 100, 0.25);
+
+    transform: translate(-50%, -50%);
+}
+
+.map-pin.selected {
+    width: 24px;
+    height: 24px;
+    background: #d65ab5;
+    box-shadow:
+        0 0 0 7px rgba(214, 90, 181, 0.15),
+        0 4px 12px rgba(80, 40, 100, 0.3);
+}
