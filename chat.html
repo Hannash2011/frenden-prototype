@@ -140,17 +140,17 @@
 
                     <h3>FrenDen recommends</h3>
 
-                    <button class="recommendation-place">
+                    <button class="recommendation-place" data-place="aurora">
                         <span>☕</span>
                         <span>Café Aurora</span>
                     </button>
 
-                    <button class="recommendation-place">
+                    <button class="recommendation-place" data-place="brygga">
                         <span>☕</span>
                         <span>Brygga Café</span>
                     </button>
 
-                    <button class="recommendation-place">
+                    <button class="recommendation-place" data-place="sentrum">
                         <span>☕</span>
                         <span>Sentrum Café</span>
                     </button>
@@ -310,6 +310,29 @@
             }
 
         });
+
+        const recommendationPlaces = document.querySelectorAll('.recommendation-place');
+        const mapPins = document.querySelectorAll('.map-pin');
+
+        recommendationPlaces.forEach((place, index) => {
+            place.addEventListener('click', () => {
+
+                mapPins.forEach(pin => {
+                    pin.classList.remove('selected');
+                });
+
+                if (mapPins[index]) {
+                    mapPins[index].classList.add('selected');
+                }
+
+                recommendationPlaces.forEach(item => {
+                    item.classList.remove('active');
+                });
+
+                place.classList.add('active');
+            });
+        });
+
 
     </script>
 
