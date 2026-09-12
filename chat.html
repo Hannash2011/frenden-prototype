@@ -325,6 +325,13 @@
                     mapPins[index].classList.add('selected');
                 }
 
+                const shifts = [0, -70, -140];
+
+                document.querySelector('.place-map').style.setProperty(
+                    '--map-shift',
+                    `${shifts[index] || 0}px`
+                );
+
                 recommendationPlaces.forEach(item => {
                     item.classList.remove('active');
                 });

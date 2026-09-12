@@ -1199,6 +1199,7 @@ CHAT AREA
 /* FIND A PLACE — MAP MOCKUP */
 
 .place-map {
+    --map-shift: 0px;
     display: block;
     position: relative;
     min-height: 360px;
@@ -1230,6 +1231,9 @@ CHAT AREA
             transparent 52%);
 
     opacity: .8;
+
+    transform: translateX(var(--map-shift));
+    transition: transform 0.45s ease;
 }
 
 /* MAP MOCKUP — ROADS & MARKERS */
@@ -1242,7 +1246,8 @@ CHAT AREA
     left: 10%;
     top: 42%;
     background: rgba(255, 255, 255, 0.8);
-    transform: rotate(-18deg);
+    transform: translateX(var(--map-shift)) rotate(-18deg);
+    transition: transform 0.45s ease;
     border-radius: 20px;
     box-shadow:
         70px 85px 0 4px rgba(255, 255, 255, 0.65),
@@ -1264,7 +1269,10 @@ CHAT AREA
 
     box-shadow: 0 3px 10px rgba(80, 40, 100, 0.25);
 
-    transform: translate(-50%, -50%);
+    transform:
+        translateX(var(--map-shift, 0px)) translate(-50%, -50%);
+
+    transition: transform 0.45s ease;
 }
 
 .map-pin.selected {
