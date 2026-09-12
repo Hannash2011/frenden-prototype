@@ -1204,6 +1204,7 @@ CHAT AREA
     min-height: 360px;
 
     background:
+
         linear-gradient(135deg, rgba(255, 255, 255, .35), transparent 45%),
         #e9e3ef;
 
@@ -1273,4 +1274,52 @@ CHAT AREA
     box-shadow:
         0 0 0 7px rgba(214, 90, 181, 0.15),
         0 4px 12px rgba(80, 40, 100, 0.3);
+}
+
+.map-recommendations {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    width: 240px;
+    background: rgba(255, 255, 255, 0.96);
+    border-radius: 18px;
+    padding: 18px;
+    box-shadow: 0 8px 25px rgba(80, 50, 100, 0.15);
+    z-index: 5;
+}
+
+.map-recommendations h3 {
+    margin: 0 0 14px;
+    font-size: 17px;
+    font-weight: 600;
+    color: #5f3b70;
+}
+
+.recommendation-place {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 8px;
+    margin-bottom: 6px;
+    border: none;
+    background: transparent;
+    border-radius: 10px;
+    cursor: pointer;
+    text-align: left;
+    color: #4d3b55;
+    font-size: 14px;
+}
+
+.recommendation-place:hover {
+    background: #f6effb;
+}
+
+.see-all {
+    border: none;
+    background: none;
+    padding: 8px 4px 2px;
+    color: #9145b5;
+    font-size: 14px;
+    cursor: pointer;
 }
