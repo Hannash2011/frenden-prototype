@@ -1331,3 +1331,36 @@ CHAT AREA
     font-size: 14px;
     cursor: pointer;
 }
+
+/* Find a place mode */
+
+.chat-area.place-mode .chat-messages,
+.chat-area.place-mode .quick-actions,
+.chat-area.place-mode .chat-input {
+    display: none;
+}
+
+.chat-area .place-map {
+    display: none;
+}
+
+.chat-area.place-mode .place-map {
+    display: block;
+    width: 100%;
+}
+
+.back-to-chat {
+    display: none;
+}
+
+.chat-area.place-mode .back-to-chat {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 12px;
+    border: none;
+    background: none;
+    color: #7f429d;
+    font-size: 14px;
+    cursor: pointer;
+}

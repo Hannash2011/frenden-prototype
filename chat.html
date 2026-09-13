@@ -88,37 +88,7 @@
 
             </div>
 
-            <div class="place-options" id="place-options">
 
-                <div class="place-title">
-                    📍 Choose a place
-                </div>
-
-                <button class="place-option" data-place="☕ Coffee House" data-type="Café" data-address="Kristiansund"
-                    data-lat="63.1109" data-lng="7.7279">
-                    ☕ Coffee House
-                    <span>Café</span>
-                </button>
-
-                <button class="place-option" data-place="🌳 City Park" data-type="Park" data-address="Kristiansund"
-                    data-lat="63.1102" data-lng="7.7287">
-                    🌳 City Park
-                    <span>Park</span>
-                </button>
-
-                <button class="place-option" data-place="🎬 Cinema" data-type="Cinema" data-address="Kristiansund"
-                    data-lat="63.1105" data-lng="7.7292">
-                    🎬 Cinema
-                    <span>Cinema</span>
-                </button>
-
-                <button class="place-option" data-place="🏋️ Fitness Center" data-type="Fitness"
-                    data-address="Kristiansund" data-lat="63.1107" data-lng="7.7284">
-                    🏋️ Fitness Center
-                    <span>Fitness</span>
-                </button>
-
-            </div>
 
 
             <div class="chat-input">
@@ -128,6 +98,10 @@
                 <button class="send-button">➤</button>
 
             </div>
+
+            <button class="back-to-chat" id="back-to-chat">
+                ← Back to chat
+            </button>
 
             <div class="place-map" id="place-map">
 
@@ -163,13 +137,16 @@
 
             </div>
 
+        </div>
+
     </main>
     <script>
         const messageInput = document.querySelector(".chat-input input");
         const sendButton = document.querySelector(".send-button");
         const chatMessages = document.querySelector(".chat-messages");
         const findPlaceButton = document.querySelector("#find-place");
-        const placeOptions = document.querySelector("#place-options");
+        const chatArea = document.querySelector(".chat-area");
+        const backToChatButton = document.querySelector("#back-to-chat");
 
         function sendMessage() {
             const text = messageInput.value.trim();
@@ -196,119 +173,12 @@
             }
         });
 
-        findPlaceButton.addEventListener("click", function () {
-            if (placeOptions.style.display === "block") {
-                placeOptions.style.display = "none";
-            } else {
-                placeOptions.style.display = "block";
-            }
-        });
-        const places = [
-            {
-                name: "☕ Coffee House",
-                type: "Café",
-                address: "Kristiansund",
-                lat: "63.1109",
-                lng: "7.7279"
-            },
-            {
-                name: "🌳 City Park",
-                type: "Park",
-                address: "Kristiansund",
-                lat: "63.1102",
-                lng: "7.7287"
-            },
-            {
-                name: "🎬 Cinema",
-                type: "Cinema",
-                address: "Kristiansund",
-                lat: "63.1105",
-                lng: "7.7292"
-            },
-            {
-                name: "🏋️ Fitness Center",
-                type: "Fitness",
-                address: "Kristiansund",
-                lat: "63.1107",
-                lng: "7.7284"
-            }
-        ];
-
-        const placeButtons = document.querySelectorAll(".place-option");
-
-        placeButtons.forEach(function (button) {
-
-            button.addEventListener("click", function () {
-
-                const placeName = button.dataset.place;
-
-                const placeType = button.dataset.type;
-
-                const placeAddress = button.dataset.address;
-
-                const placeMessage = document.createElement("div");
-
-                const placeLat = button.dataset.lat;
-
-                const placeLng = button.dataset.lng;
-
-                placeMessage.className = "message message-sent place-message";
-
-                placeMessage.dataset.lat = placeLat;
-                placeMessage.dataset.lng = placeLng;
-
-                placeMessage.innerHTML = `
-    <div class="place-name">${placeName}</div>
-    <div class="place-type">${placeType}</div>
-<small>📍 ${placeAddress}</small>
-
-    <small>Suggested meeting place</small>
-    <div class="place-actions">
-    <button class="accept-place">Accept</button>
-    <button class="another-place">Suggest another</button>
-    </div>
-    `;
-
-                chatMessages.appendChild(placeMessage);
-
-                placeOptions.style.display = "none";
-
-                messageInput.focus();
-            });
-
+        findPlaceButton.addEventListener("click", () => {
+            chatArea.classList.add("place-mode");
         });
 
-        document.addEventListener("click", function (event) {
-
-            if (event.target.classList.contains("accept-place")) {
-
-                const placeMessage = event.target.closest(".place-message");
-                const placeName = placeMessage.querySelector(".place-name").textContent;
-
-                const placeLat = placeMessage.dataset.lat;
-                const placeLng = placeMessage.dataset.lng;
-
-                placeMessage.innerHTML = `
-    <div class="place-name">${placeName}</div>
-    <div class="place-confirmed">✓ Meeting place confirmed</div>
-    `;
-
-            }
-
-        });
-
-        document.addEventListener("click", function (event) {
-
-            if (event.target.classList.contains("another-place")) {
-
-                placeOptions.style.display = "block";
-
-                placeOptions.scrollIntoView({
-                    behavior: "smooth",
-                    block: "nearest"
-                });
-            }
-
+        backToChatButton.addEventListener("click", () => {
+            chatArea.classList.remove("place-mode");
         });
 
         const recommendationPlaces = document.querySelectorAll('.recommendation-place');
