@@ -1417,3 +1417,10 @@ CHAT AREA
 #send-place:hover {
     background: #9145b5;
 }
+
+.place-message {
+    background: #ead8f4;
+    color: #8f3db5;
+    font-weight: 600;
+    border: 1px solid #d9b9e8;
+}
