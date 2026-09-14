@@ -218,6 +218,11 @@
                 });
 
                 place.classList.add('active');
+
+                const selectedPlaceName = document.querySelector("#selected-place-name");
+
+                selectedPlaceName.textContent =
+                    place.querySelector("span:last-child").textContent;
             });
         });
 
