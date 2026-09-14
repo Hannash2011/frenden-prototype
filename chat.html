@@ -226,6 +226,24 @@
             });
         });
 
+        const sendPlaceButton = document.querySelector("#send-place");
+        const selectedPlaceName = document.querySelector("#selected-place-name");
+
+        sendPlaceButton.addEventListener("click", () => {
+
+            const placeName = selectedPlaceName.textContent;
+
+            const message = document.createElement("div");
+
+            message.className = "message message-sent place-message";
+            message.textContent = "📍 " + placeName;
+
+            chatMessages.appendChild(message);
+
+            chatArea.classList.remove("place-mode");
+
+        });
+
 
     </script>
 
