@@ -245,21 +245,7 @@
 
         });
 
-        document.addEventListener("click", function (event) {
 
-            const placeMessage = event.target.closest(".place-message");
-
-            if (!placeMessage) return;
-
-            const placeName = placeMessage.dataset.placeName;
-            const placeId = placeMessage.dataset.placeId;
-
-            alert(
-                "Place: " + placeName +
-                "\nID: " + placeId
-            );
-
-        });
 
     </script>
 
