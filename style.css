@@ -1346,21 +1346,7 @@ CHAT AREA
     display: block;
 }
 
-.back-to-chat {
-    display: none;
-}
 
-.chat-area.place-mode .back-to-chat {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    margin-bottom: 12px;
-    border: none;
-    background: none;
-    color: #7f429d;
-    font-size: 14px;
-    cursor: pointer;
-}
 
 .selected-place-action {
     position: absolute;

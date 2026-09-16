@@ -99,9 +99,7 @@
 
             </div>
 
-            <button class="back-to-chat" id="back-to-chat">
-                ← Back to chat
-            </button>
+
 
             <div class="place-map" id="place-map">
 
@@ -157,7 +155,6 @@
         const chatMessages = document.querySelector(".chat-messages");
         const findPlaceButton = document.querySelector("#find-place");
         const chatArea = document.querySelector(".chat-area");
-        const backToChatButton = document.querySelector("#back-to-chat");
 
         function sendMessage() {
             const text = messageInput.value.trim();
@@ -188,9 +185,7 @@
             chatArea.classList.add("place-mode");
         });
 
-        backToChatButton.addEventListener("click", () => {
-            chatArea.classList.remove("place-mode");
-        });
+
 
         const recommendationPlaces = document.querySelectorAll('.recommendation-place');
         const mapPins = document.querySelectorAll('.map-pin');
