@@ -103,11 +103,7 @@
 
             <div class="place-map" id="place-map">
 
-                <div class="map-building building-1"></div>
-                <div class="map-building building-2"></div>
-                <div class="map-building building-3"></div>
-                <div class="map-building building-4"></div>
-                <div class="map-building building-5"></div>
+
 
                 <div class="map-pin" style="left: 18%; top: 30%;"></div>
                 <div class="map-pin" style="left: 42%; top: 58%;"></div>
@@ -238,6 +234,9 @@
 
             message.className = "message message-sent place-message";
             message.textContent = "📍 " + placeName;
+
+            message.dataset.placeName = placeName;
+            message.dataset.placeId = "mock-place-001";
 
             chatMessages.appendChild(message);
 
