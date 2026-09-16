@@ -1334,19 +1334,16 @@ CHAT AREA
 
 /* Find a place mode */
 
-.chat-area.place-mode .chat-messages,
-.chat-area.place-mode .quick-actions,
-.chat-area.place-mode .chat-input {
-    display: none;
-}
+/* Find a place mode */
 
 .chat-area .place-map {
     display: none;
+    width: 100%;
+    margin-top: 20px;
 }
 
 .chat-area.place-mode .place-map {
     display: block;
-    width: 100%;
 }
 
 .back-to-chat {
