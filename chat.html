@@ -254,8 +254,10 @@
             const placeName = placeMessage.dataset.placeName;
             const placeId = placeMessage.dataset.placeId;
 
-            console.log("Selected place:", placeName);
-            console.log("Google Place ID:", placeId);
+            alert(
+                "Place: " + placeName +
+                "\nID: " + placeId
+            );
 
         });
 
