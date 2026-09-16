@@ -114,17 +114,17 @@
 
                     <h3>FrenDen recommends</h3>
 
-                    <button class="recommendation-place" data-place="aurora">
+                    <button class="recommendation-place" data-place="aurora" data-place-id="mock-aurora-001">
                         <span>☕</span>
                         <span>Café Aurora</span>
                     </button>
 
-                    <button class="recommendation-place" data-place="brygga">
+                    <button class="recommendation-place" data-place="brygga" data-place-id="mock-brygga-002">
                         <span>☕</span>
                         <span>Brygga Café</span>
                     </button>
 
-                    <button class="recommendation-place" data-place="sentrum">
+                    <button class="recommendation-place" data-place="sentrum" data-place-id="mock-sentrum-003">
                         <span>☕</span>
                         <span>Sentrum Café</span>
                     </button>
@@ -236,14 +236,28 @@
             message.textContent = "📍 " + placeName;
 
             message.dataset.placeName = placeName;
-            message.dataset.placeId = "mock-place-001";
-
+            message.dataset.placeId =
+                document.querySelector(".recommendation-place.active")
+                    ?.dataset.placeId || "";
             chatMessages.appendChild(message);
 
             chatArea.classList.remove("place-mode");
 
         });
 
+        document.addEventListener("click", function (event) {
+
+            const placeMessage = event.target.closest(".place-message");
+
+            if (!placeMessage) return;
+
+            const placeName = placeMessage.dataset.placeName;
+            const placeId = placeMessage.dataset.placeId;
+
+            console.log("Selected place:", placeName);
+            console.log("Google Place ID:", placeId);
+
+        });
 
     </script>
 
