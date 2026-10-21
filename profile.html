@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile | FrenDen</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="header-left">
+            <a href="index.html" class="logo">FrenDen</a>
+        </div>
+
+        <div class="header-center">
+            <div class="search">
+                <input type="text" placeholder="Search experiences...">
+                <button class="search-btn">⌕</button>
+            </div>
+        </div>
+
+        <div class="header-right">
+            <button class="nav-btn">Create</button>
+            <button class="icon-btn">🌿</button>
+            <button class="profile">🙂</button>
+        </div>
+    </header>
+
+    <main class="main">
+
+        <div class="breadcrumbs">
+            <a href="index.html">Home</a>
+            <span>›</span>
+            <a href="coffee-walk.html">Coffee & Walk</a>
+            <span>›</span>
+            <a href="coffee.html">Coffee</a>
+            <span>›</span>
+            <span class="current" id="breadcrumb-name">Anna</span>
+        </div>
+
+        <div class="back-link">
+            <a href="coffee.html">← Back to Coffee</a>
+        </div>
+
+        <section class="profile-card">
+
+            <div class="profile-avatar">
+                <img id="profile-photo" src="https://i.pravatar.cc/300" alt="Profile photo">
+            </div>
+
+            <h1 id="profile-name">Anna, 28</h1>
+
+            <p class="location" id="profile-location">📍 Oslo</p>
+            <p class="distance" id="profile-distance">🌍 1.2 km away</p>
+
+            <p class="activity-time" id="profile-time">
+                ☕ Coffee: Today after 18:00
+            </p>
+
+            <section class="profile-looking">
+                <h2>Looking for</h2>
+
+                <div class="tags" id="profile-looking-tags">
+                    <span>☕ Coffee after work</span>
+                    <span>🚶 Evening walk</span>
+                    <span>💬 Good conversation</span>
+                </div>
+
+                <div class="status" id="profile-status">🟢 Online</div>
+
+                <div class="profile-about">
+                    <h2>About</h2>
+                    <p id="profile-about-text">
+                        I enjoy discovering cozy cafés and having meaningful conversations.
+                    </p>
+                </div>
+
+                <div class="profile-activities">
+                    <h2>Activities</h2>
+                    <div class="tags" id="profile-activities-tags">
+                        <span>☕ Coffee</span>
+                        <span>🚶 Walks</span>
+                    </div>
+                </div>
+
+                <div class="profile-languages">
+                    <h3>Languages</h3>
+                    <div class="tags" id="profile-languages-tags">
+                        <span>🇬🇧 English</span>
+                        <span>🇳🇴 Norwegian</span>
+                    </div>
+                </div>
+
+                <a href="chat.html?person=Anna" class="meet-btn" id="profile-message-link">
+                    Send message
+                </a>
+
+            </section>
+        </section>
+
+    </main>
+
+    <script>
+        const profiles = {
+            anna: {
+                name: "Anna",
+                age: 28,
+                photo: "https://i.pravatar.cc/300",
+                location: "📍 Oslo",
+                distance: "🌍 1.2 km away",
+                time: "☕ Coffee: Today after 18:00",
+                status: "🟢 Online",
+                looking: [
+                    "☕ Coffee after work",
+                    "🚶 Evening walk",
+                    "💬 Good conversation"
+                ],
+                about: "I enjoy discovering cozy cafés, exploring hidden places, walking through the city and having meaningful conversations. I believe the best friendships often begin with a simple cup of coffee.",
+                activities: ["☕ Coffee", "🚶 Walks", "🎬 Cinema", "🎨 Art"],
+                languages: ["🇬🇧 English", "🇳🇴 Norwegian", "🇺🇦 Ukrainian"]
+            },
+
+            emma: {
+                name: "Emma",
+                age: 31,
+                photo: "https://i.pravatar.cc/300?img=47",
+                location: "📍 Oslo",
+                distance: "🌍 2.4 km away",
+                time: "☕ Coffee: Tomorrow at 09:30",
+                status: "🟢 Online",
+                looking: ["☕ Morning coffee", "🌅 Morning", "💬 Good conversation"],
+                about: "I enjoy starting the day with good coffee and a friendly conversation.",
+                activities: ["☕ Coffee", "🌅 Morning", "💬 Chat"],
+                languages: ["🇬🇧 English", "🇳🇴 Norwegian"]
+            },
+
+            lucas: {
+                name: "Lucas",
+                age: 26,
+                photo: "https://i.pravatar.cc/300?img=12",
+                location: "📍 Oslo",
+                distance: "🌍 0.8 km away",
+                time: "☕ Coffee: Today at 15:00",
+                status: "🟢 Online",
+                looking: ["☕ Try a new café", "📍 New places", "🚶 Explore"],
+                about: "I love discovering small cafés around the city. Looking for someone to join me.",
+                activities: ["☕ Coffee", "📍 New places", "🚶 Explore"],
+                languages: ["🇬🇧 English", "🇳🇴 Norwegian"]
+            },
+
+            sofia: {
+                name: "Sofia",
+                age: 34,
+                photo: "https://i.pravatar.cc/300?img=44",
+                location: "📍 Oslo",
+                distance: "🌍 1.7 km away",
+                time: "☕ Coffee: Today at 16:30",
+                status: "⚪ Away",
+                looking: ["☕ Coffee & conversation", "💬 Interesting conversations", "🌿 Relaxed atmosphere"],
+                about: "I enjoy quiet cafés, good coffee and interesting conversations.",
+                activities: ["☕ Coffee", "💬 Conversation", "🌿 Relaxed"],
+                languages: ["🇬🇧 English", "🇳🇴 Norwegian"]
+            }
+        };
+
+        const params = new URLSearchParams(window.location.search);
+        const personKey = (params.get("person") || "anna").toLowerCase();
+        const person = profiles[personKey];
+
+        if (!person) {
+            document.querySelector(".profile-card").innerHTML =
+                "<h1>Profile not found</h1><p>Please return to Coffee.</p>";
+        } else {
+            document.title = `${person.name} | FrenDen`;
+            document.querySelector("#breadcrumb-name").textContent = person.name;
+            document.querySelector("#profile-photo").src = person.photo;
+            document.querySelector("#profile-photo").alt = `${person.name} profile photo`;
+            document.querySelector("#profile-name").textContent =
+                `${person.name}, ${person.age}`;
+            document.querySelector("#profile-location").textContent = person.location;
+            document.querySelector("#profile-distance").textContent = person.distance;
+            document.querySelector("#profile-time").textContent = person.time;
+            document.querySelector("#profile-status").textContent = person.status;
+            document.querySelector("#profile-about-text").textContent = person.about;
+            document.querySelector("#profile-message-link").href =
+                `chat.html?person=${encodeURIComponent(person.name)}`;
+
+            function fillTags(id, items) {
+                const container = document.getElementById(id);
+                container.replaceChildren();
+
+                items.forEach(item => {
+                    const tag = document.createElement("span");
+                    tag.textContent = item;
+                    container.appendChild(tag);
+                });
+            }
+
+            fillTags("profile-looking-tags", person.looking);
+            fillTags("profile-activities-tags", person.activities);
+            fillTags("profile-languages-tags", person.languages);
+        }
+    </script>
+
+</body>
+
+</html>

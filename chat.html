@@ -51,17 +51,17 @@
         <section class="chat-header">
 
             <div class="chat-avatar">
-                <img src="https://i.pravatar.cc/200?img=47" alt="Anna">
+                <img id="chat-person-avatar" src="https://i.pravatar.cc/200?img=47" alt="User">
             </div>
 
             <div class="chat-info">
-
-                <h2>Anna</h2>
+                <h2 id="chat-person-name">Anna</h2>
 
                 <div class="meeting-status">
                     ☕ Today after 18:00
                 </div>
             </div>
+
         </section>
 
 
@@ -155,6 +155,19 @@
 
     </main>
     <script>
+        const params = new URLSearchParams(window.location.search);
+        const personName = params.get("person") || "Anna";
+
+        document.querySelector("#chat-person-name").textContent = personName;
+        document.querySelector("#chat-person-avatar").alt = personName;
+        document.title = `Chat with ${personName} | FrenDen`;
+
+        document.querySelector(".chat-messages .message-sent").textContent =
+            `Hi ${personName}! 👋`;
+
+        document.querySelector("#send-place").textContent =
+            `Send to ${personName}`;
+
         const messageInput = document.querySelector(".chat-input input");
         const sendButton = document.querySelector(".send-button");
         const chatMessages = document.querySelector(".chat-messages");
