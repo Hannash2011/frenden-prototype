@@ -36,7 +36,7 @@
             <span>›</span>
             <a href="coffee-walk.html">Coffee & Walk</a>
             <span>›</span>
-            <a href="coffee.html">Coffee</a>
+            <a href="coffee.html" id="breadcrumb-section">Coffee</a>
             <span>›</span>
             <span class="current" id="breadcrumb-name">Anna</span>
         </div>
@@ -266,6 +266,37 @@
 
 
         const params = new URLSearchParams(window.location.search);
+        const from = params.get("from") || "coffee";
+
+        const sections = {
+            "coffee": {
+                name: "Coffee",
+                url: "coffee.html"
+            },
+            "walks": {
+                name: "Walks",
+                url: "walks.html"
+            },
+            "city-walks": {
+                name: "City Walks",
+                url: "city-walks.html"
+            },
+            "park-walks": {
+                name: "Park Walks",
+                url: "park-walks.html"
+            }
+        };
+
+        const currentSection = sections[from] || sections.coffee;
+
+        const sectionLink = document.getElementById("breadcrumb-section");
+        sectionLink.textContent = currentSection.name;
+        sectionLink.href = currentSection.url;
+
+        const backLink = document.querySelector(".back-link a");
+        backLink.textContent = `← Back to ${currentSection.name}`;
+        backLink.href = currentSection.url;
+
         const personKey = (params.get("person") || "anna").toLowerCase();
         const person = profiles[personKey];
 
