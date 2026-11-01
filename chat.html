@@ -26,7 +26,7 @@
     </header>
 
     <main class="main">
-        <div class="breadcrumbs">
+        <<div class="breadcrumbs">
 
             <a href="index.html">Home</a>
 
@@ -36,127 +36,155 @@
 
             <span>›</span>
 
-            <a href="coffee.html">Coffee</a>
+            <a href="coffee.html" id="chat-breadcrumb-section">Coffee</a>
 
             <span>›</span>
 
-            <a href="anna-profile.html">Anna</a>
+            <a href="profile.html" id="chat-breadcrumb-person">Anna</a>
 
             <span>›</span>
 
             <span class="current">Chat</span>
 
-        </div>
-
-        <section class="chat-header">
-
-            <div class="chat-avatar">
-                <img id="chat-person-avatar" src="https://i.pravatar.cc/200?img=47" alt="User">
             </div>
 
-            <div class="chat-info">
-                <h2 id="chat-person-name">Anna</h2>
+            <section class="chat-header">
 
-                <div class="meeting-status">
-                    ☕ Today after 18:00
-                </div>
-            </div>
-
-        </section>
-
-
-        <div class="chat-area">
-
-            <section class="chat-messages">
-
-                <div class="message message-sent">
-                    Hi Anna! 👋
+                <div class="chat-avatar">
+                    <img id="chat-person-avatar" src="https://i.pravatar.cc/200?img=47" alt="User">
                 </div>
 
-                <div class="message message-received">
-                    Hi! 😊
-                </div>
+                <div class="chat-info">
+                    <h2 id="chat-person-name">Anna</h2>
 
-                <div class="message message-sent">
-                    How are you?
+                    <div class="meeting-status">
+                        ☕ Today after 18:00
+                    </div>
                 </div>
 
             </section>
-            <div class="quick-actions">
-
-                <button id="find-place">📍 Find a place</button>
-
-            </div>
 
 
+            <div class="chat-area">
 
+                <section class="chat-messages">
 
-            <div class="chat-input">
-
-                <input type="text" placeholder="Type a message...">
-
-                <button class="send-button">➤</button>
-
-            </div>
-
-
-
-            <div class="place-map" id="place-map">
-
-
-
-                <div class="map-pin" style="left: 18%; top: 30%;"></div>
-                <div class="map-pin" style="left: 42%; top: 58%;"></div>
-                <div class="map-pin selected" style="left: 63%; top: 38%;"></div>
-                <div class="map-pin" style="left: 78%; top: 68%;"></div>
-
-                <div class="map-recommendations">
-
-                    <h3>FrenDen recommends</h3>
-
-                    <button class="recommendation-place" data-place="aurora" data-place-id="mock-aurora-001"
-                        data-lat="59.9125" data-lng="10.7445">
-                        <span>☕</span>
-                        <span>Café Aurora</span>
-                    </button>
-
-                    <button class="recommendation-place" data-place="brygga" data-place-id="mock-brygga-002"
-                        data-lat="59.9132" data-lng="10.7470">
-                        <span>☕</span>
-                        <span>Brygga Café</span>
-                    </button>
-
-                    <button class="recommendation-place" data-place="sentrum" data-place-id="mock-sentrum-003"
-                        data-lat="59.9118" data-lng="10.7500">
-                        <span>☕</span>
-                        <span>Sentrum Café</span>
-                    </button>
-
-                    <button class="see-all" type="button">
-                        See all →
-                    </button>
-
-                </div>
-                <div class="selected-place-action" id="selected-place-action">
-
-                    <div class="selected-place-info">
-                        <strong id="selected-place-name">Café Aurora</strong>
-                        <span>Selected place</span>
+                    <div class="message message-sent">
+                        Hi Anna! 👋
                     </div>
 
-                    <button id="send-place">
-                        Send to Anna
-                    </button>
+                    <div class="message message-received">
+                        Hi! 😊
+                    </div>
+
+                    <div class="message message-sent">
+                        How are you?
+                    </div>
+
+                </section>
+                <div class="quick-actions">
+
+                    <button id="find-place">📍 Find a place</button>
 
                 </div>
-            </div>
 
-        </div>
+
+
+
+                <div class="chat-input">
+
+                    <input type="text" placeholder="Type a message...">
+
+                    <button class="send-button">➤</button>
+
+                </div>
+
+
+
+                <div class="place-map" id="place-map">
+
+
+
+                    <div class="map-pin" style="left: 18%; top: 30%;"></div>
+                    <div class="map-pin" style="left: 42%; top: 58%;"></div>
+                    <div class="map-pin selected" style="left: 63%; top: 38%;"></div>
+                    <div class="map-pin" style="left: 78%; top: 68%;"></div>
+
+                    <div class="map-recommendations">
+
+                        <h3>FrenDen recommends</h3>
+
+                        <button class="recommendation-place" data-place="aurora" data-place-id="mock-aurora-001"
+                            data-lat="59.9125" data-lng="10.7445">
+                            <span>☕</span>
+                            <span>Café Aurora</span>
+                        </button>
+
+                        <button class="recommendation-place" data-place="brygga" data-place-id="mock-brygga-002"
+                            data-lat="59.9132" data-lng="10.7470">
+                            <span>☕</span>
+                            <span>Brygga Café</span>
+                        </button>
+
+                        <button class="recommendation-place" data-place="sentrum" data-place-id="mock-sentrum-003"
+                            data-lat="59.9118" data-lng="10.7500">
+                            <span>☕</span>
+                            <span>Sentrum Café</span>
+                        </button>
+
+                        <button class="see-all" type="button">
+                            See all →
+                        </button>
+
+                    </div>
+                    <div class="selected-place-action" id="selected-place-action">
+
+                        <div class="selected-place-info">
+                            <strong id="selected-place-name">Café Aurora</strong>
+                            <span>Selected place</span>
+                        </div>
+
+                        <button id="send-place">
+                            Send to Anna
+                        </button>
+
+                    </div>
+                </div>
+
+            </div>
 
     </main>
     <script>
         const params = new URLSearchParams(window.location.search);
         const personName = params.get("person") || "Anna";
+
+        const from = params.get("from") || "coffee";
+
+        const sections = {
+            "coffee": { name: "Coffee", url: "coffee.html" },
+            "walks": { name: "Walks", url: "walks.html" },
+            "city-walks": { name: "City Walks", url: "city-walks.html" },
+            "park-walks": { name: "Park Walks", url: "park-walks.html" },
+            "dog-walks": { name: "Dog Walks", url: "dog-walks.html" },
+            "shopping": { name: "Shopping", url: "shopping.html" },
+            "breakfast": { name: "Breakfast", url: "breakfast.html" },
+            "photo-walks": { name: "Photo Walks", url: "photo-walks.html" },
+            "desserts": { name: "Desserts", url: "desserts.html" },
+            "sunset-walks": { name: "Sunset Walks", url: "sunset-walks.html" },
+            "sunrise-walks": { name: "Sunrise Walks", url: "sunrise-walks.html" },
+            "coffee-books": { name: "Coffee & Books", url: "coffee-books.html" }
+        };
+
+        const currentSection = sections[from] || sections.coffee;
+
+        const sectionLink = document.getElementById("chat-breadcrumb-section");
+        sectionLink.textContent = currentSection.name;
+        sectionLink.href = currentSection.url;
+
+        const personLink = document.getElementById("chat-breadcrumb-person");
+        personLink.textContent = personName;
+        personLink.href = `profile.html?person=${encodeURIComponent(personName.toLowerCase())}&from=${encodeURIComponent(from)}`;
+
 
         document.querySelector("#chat-person-name").textContent = personName;
         document.querySelector("#chat-person-avatar").alt = personName;

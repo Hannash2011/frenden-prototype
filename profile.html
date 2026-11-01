@@ -156,7 +156,7 @@
             document.querySelector("#profile-status").textContent = person.status;
             document.querySelector("#profile-about-text").textContent = person.about;
             document.querySelector("#profile-message-link").href =
-                `chat.html?person=${encodeURIComponent(person.name)}`;
+                `chat.html?person=${encodeURIComponent(personKey)}&from=${encodeURIComponent(from)}`;
 
             function fillTags(id, items) {
                 const container = document.getElementById(id);
