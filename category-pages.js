@@ -49,6 +49,108 @@ const categories = {
     }
 };
 
+
+// Распределение тестовых пользователей по подразделам
+
+const categoryUsers = {
+    "coffee": [
+        "anna",
+        "emma",
+        "lucas",
+        "sofia",
+        "daniel"
+    ],
+
+    "walks": [
+        "anna",
+        "daniel",
+        "noah",
+        "alex",
+        "nina"
+    ],
+
+    "city-walks": [
+        "lucas",
+        "daniel",
+        "ethan",
+        "nina",
+        "alex"
+    ],
+
+    "park-walks": [
+        "anna",
+        "noah",
+        "alex",
+        "mia",
+        "nina"
+    ],
+
+    "dog-walks": [
+        "alex",
+        "noah",
+        "mia",
+        "nina",
+        "ethan"
+    ],
+
+    "shopping": [
+        "emma",
+        "clara",
+        "lily",
+        "sofia",
+        "olivia"
+    ],
+
+    "breakfast": [
+        "emma",
+        "olivia",
+        "clara",
+        "lily",
+        "anna"
+    ],
+
+    "photo-walks": [
+        "mia",
+        "clara",
+        "ethan",
+        "alex",
+        "nina"
+    ],
+
+    "desserts": [
+        "lily",
+        "emma",
+        "clara",
+        "olivia",
+        "sofia"
+    ],
+
+    "sunset-walks": [
+        "alex",
+        "nina",
+        "noah",
+        "mia",
+        "daniel"
+    ],
+
+    "sunrise-walks": [
+        "emma",
+        "anna",
+        "olivia",
+        "lucas",
+        "ethan"
+    ],
+
+    "coffee-books": [
+        "olivia",
+        "anna",
+        "sofia",
+        "clara",
+        "emma"
+    ]
+};
+
+
 const pageKey = location.pathname
     .split("/")
     .pop()
@@ -57,15 +159,25 @@ const pageKey = location.pathname
 const category = categories[pageKey];
 
 if (category && window.profiles) {
+
     document.title = `${category.title} | FrenDen`;
 
     const main = document.querySelector("main");
 
-    const cards = Object.entries(window.profiles).map(([key, person]) => `
+    const userKeys = categoryUsers[pageKey] || [];
+
+    const cards = userKeys
+        .filter(key => window.profiles[key])
+        .map(key => {
+
+            const person = window.profiles[key];
+
+            return `
 <a href="profile.html?person=${encodeURIComponent(key)}&from=${encodeURIComponent(pageKey)}"
 class="user-card">
 
 <div class="user-top">
+
 <div class="avatar">
 ${person.photo ? `<img src="${person.photo}" alt="${person.name}">` : ""}
 </div>
@@ -78,10 +190,13 @@ ${person.photo ? `<img src="${person.photo}" alt="${person.name}">` : ""}
 <div class="status">
 ${person.status}
 </div>
+
 </div>
 
 <div class="user-title">
-${person.looking || person.activities || category.title}
+${Array.isArray(person.looking)
+                    ? person.looking.join(" · ")
+                    : person.looking || person.activities || category.title}
 </div>
 
 <div class="user-text">
@@ -93,14 +208,16 @@ ${person.about || ""}
 </div>
 
 <div class="tags">
-${(person.activities || []).toString().split(",").filter(Boolean)
-            .slice(0, 3)
-            .map(item => `<span>${item.trim()}</span>`)
-            .join("")}
+${(person.activities || [])
+                    .slice(0, 3)
+                    .map(item => `<span>${item}</span>`)
+                    .join("")}
 </div>
 
 </a>
-`).join("");
+`;
+        })
+        .join("");
 
     main.innerHTML = `
 <div class="breadcrumbs">
