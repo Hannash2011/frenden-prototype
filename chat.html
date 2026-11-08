@@ -26,7 +26,7 @@
     </header>
 
     <main class="main">
-        <<div class="breadcrumbs">
+        <div class="breadcrumbs">
 
             <a href="index.html">Home</a>
 
@@ -46,119 +46,123 @@
 
             <span class="current">Chat</span>
 
+        </div>
+
+        <section class="chat-header">
+
+            <div class="chat-avatar">
+                <img id="chat-person-avatar" src="https://i.pravatar.cc/200?img=47" alt="User">
             </div>
 
-            <section class="chat-header">
+            <div class="chat-info">
+                <h2 id="chat-person-name">Anna</h2>
 
-                <div class="chat-avatar">
-                    <img id="chat-person-avatar" src="https://i.pravatar.cc/200?img=47" alt="User">
+                <div class="meeting-status">
+                    ☕ Today after 18:00
+                </div>
+            </div>
+
+        </section>
+
+
+        <div class="chat-area">
+
+            <section class="chat-messages">
+
+                <div class="message message-sent">
+                    Hi Anna! 👋
                 </div>
 
-                <div class="chat-info">
-                    <h2 id="chat-person-name">Anna</h2>
+                <div class="message message-received">
+                    Hi! 😊
+                </div>
 
-                    <div class="meeting-status">
-                        ☕ Today after 18:00
-                    </div>
+                <div class="message message-sent">
+                    How are you?
                 </div>
 
             </section>
+            <div class="quick-actions">
 
-
-            <div class="chat-area">
-
-                <section class="chat-messages">
-
-                    <div class="message message-sent">
-                        Hi Anna! 👋
-                    </div>
-
-                    <div class="message message-received">
-                        Hi! 😊
-                    </div>
-
-                    <div class="message message-sent">
-                        How are you?
-                    </div>
-
-                </section>
-                <div class="quick-actions">
-
-                    <button id="find-place">📍 Find a place</button>
-
-                </div>
-
-
-
-
-                <div class="chat-input">
-
-                    <input type="text" placeholder="Type a message...">
-
-                    <button class="send-button">➤</button>
-
-                </div>
-
-
-
-                <div class="place-map" id="place-map">
-
-
-
-                    <div class="map-pin" style="left: 18%; top: 30%;"></div>
-                    <div class="map-pin" style="left: 42%; top: 58%;"></div>
-                    <div class="map-pin selected" style="left: 63%; top: 38%;"></div>
-                    <div class="map-pin" style="left: 78%; top: 68%;"></div>
-
-                    <div class="map-recommendations">
-
-                        <h3>FrenDen recommends</h3>
-
-                        <button class="recommendation-place" data-place="aurora" data-place-id="mock-aurora-001"
-                            data-lat="59.9125" data-lng="10.7445">
-                            <span>☕</span>
-                            <span>Café Aurora</span>
-                        </button>
-
-                        <button class="recommendation-place" data-place="brygga" data-place-id="mock-brygga-002"
-                            data-lat="59.9132" data-lng="10.7470">
-                            <span>☕</span>
-                            <span>Brygga Café</span>
-                        </button>
-
-                        <button class="recommendation-place" data-place="sentrum" data-place-id="mock-sentrum-003"
-                            data-lat="59.9118" data-lng="10.7500">
-                            <span>☕</span>
-                            <span>Sentrum Café</span>
-                        </button>
-
-                        <button class="see-all" type="button">
-                            See all →
-                        </button>
-
-                    </div>
-                    <div class="selected-place-action" id="selected-place-action">
-
-                        <div class="selected-place-info">
-                            <strong id="selected-place-name">Café Aurora</strong>
-                            <span>Selected place</span>
-                        </div>
-
-                        <button id="send-place">
-                            Send to Anna
-                        </button>
-
-                    </div>
-                </div>
+                <button id="find-place">📍 Find a place</button>
 
             </div>
 
+
+
+
+            <div class="chat-input">
+
+                <input type="text" placeholder="Type a message...">
+
+                <button class="send-button">➤</button>
+
+            </div>
+
+
+
+            <div class="place-map" id="place-map">
+
+
+
+                <div class="map-pin" style="left: 18%; top: 30%;"></div>
+                <div class="map-pin" style="left: 42%; top: 58%;"></div>
+                <div class="map-pin selected" style="left: 63%; top: 38%;"></div>
+                <div class="map-pin" style="left: 78%; top: 68%;"></div>
+
+                <div class="map-recommendations">
+
+                    <h3>FrenDen recommends</h3>
+
+                    <button class="recommendation-place" data-place="aurora" data-place-id="mock-aurora-001"
+                        data-lat="59.9125" data-lng="10.7445">
+                        <span>☕</span>
+                        <span>Café Aurora</span>
+                    </button>
+
+                    <button class="recommendation-place" data-place="brygga" data-place-id="mock-brygga-002"
+                        data-lat="59.9132" data-lng="10.7470">
+                        <span>☕</span>
+                        <span>Brygga Café</span>
+                    </button>
+
+                    <button class="recommendation-place" data-place="sentrum" data-place-id="mock-sentrum-003"
+                        data-lat="59.9118" data-lng="10.7500">
+                        <span>☕</span>
+                        <span>Sentrum Café</span>
+                    </button>
+
+                    <button class="see-all" type="button">
+                        See all →
+                    </button>
+
+                </div>
+                <div class="selected-place-action" id="selected-place-action">
+
+                    <div class="selected-place-info">
+                        <strong id="selected-place-name">Café Aurora</strong>
+                        <span>Selected place</span>
+                    </div>
+
+                    <button id="send-place">
+                        Send to Anna
+                    </button>
+
+                </div>
+            </div>
+
+        </div>
+
     </main>
+    <script src="users.js"></script>
+
     <script>
         const params = new URLSearchParams(window.location.search);
-        const personName = params.get("person") || "Anna";
-
+        const personKey = (params.get("person") || "anna").toLowerCase();
         const from = params.get("from") || "coffee";
+
+        const person = window.profiles[personKey];
+        const personName = person ? person.name : personKey;
 
         const sections = {
             "coffee": { name: "Coffee", url: "coffee.html" },
@@ -183,11 +187,21 @@
 
         const personLink = document.getElementById("chat-breadcrumb-person");
         personLink.textContent = personName;
-        personLink.href = `profile.html?person=${encodeURIComponent(personName.toLowerCase())}&from=${encodeURIComponent(from)}`;
-
+        personLink.href = `profile.html?person=${encodeURIComponent(personKey)}&from=${encodeURIComponent(from)}`;
 
         document.querySelector("#chat-person-name").textContent = personName;
-        document.querySelector("#chat-person-avatar").alt = personName;
+
+        const chatAvatar = document.querySelector("#chat-person-avatar");
+        chatAvatar.alt = personName;
+
+        if (person && person.photo) {
+            chatAvatar.src = person.photo;
+        }
+
+        if (person && person.time) {
+            document.querySelector(".meeting-status").textContent = person.time;
+        }
+
         document.title = `Chat with ${personName} | FrenDen`;
 
         document.querySelector(".chat-messages .message-sent").textContent =
@@ -204,18 +218,14 @@
 
         function sendMessage() {
             const text = messageInput.value.trim();
-
             if (text === "") return;
 
             const message = document.createElement("div");
-
             message.className = "message message-sent";
             message.textContent = text;
 
             chatMessages.appendChild(message);
-
             messageInput.value = "";
-
             messageInput.focus();
         }
 
@@ -231,38 +241,28 @@
             chatArea.classList.add("place-mode");
         });
 
-
-
-        const recommendationPlaces = document.querySelectorAll('.recommendation-place');
-        const mapPins = document.querySelectorAll('.map-pin');
+        const recommendationPlaces = document.querySelectorAll(".recommendation-place");
+        const mapPins = document.querySelectorAll(".map-pin");
 
         recommendationPlaces.forEach((place, index) => {
-            place.addEventListener('click', () => {
-
-                mapPins.forEach(pin => {
-                    pin.classList.remove('selected');
-                });
+            place.addEventListener("click", () => {
+                mapPins.forEach(pin => pin.classList.remove("selected"));
 
                 if (mapPins[index]) {
-                    mapPins[index].classList.add('selected');
+                    mapPins[index].classList.add("selected");
                 }
 
                 const shifts = [0, -70, -140];
 
-                document.querySelector('.place-map').style.setProperty(
-                    '--map-shift',
+                document.querySelector(".place-map").style.setProperty(
+                    "--map-shift",
                     `${shifts[index] || 0}px`
                 );
 
-                recommendationPlaces.forEach(item => {
-                    item.classList.remove('active');
-                });
+                recommendationPlaces.forEach(item => item.classList.remove("active"));
+                place.classList.add("active");
 
-                place.classList.add('active');
-
-                const selectedPlaceName = document.querySelector("#selected-place-name");
-
-                selectedPlaceName.textContent =
+                document.querySelector("#selected-place-name").textContent =
                     place.querySelector("span:last-child").textContent;
             });
         });
@@ -271,48 +271,35 @@
         const selectedPlaceName = document.querySelector("#selected-place-name");
 
         sendPlaceButton.addEventListener("click", () => {
-
             const placeName = selectedPlaceName.textContent;
+            const selectedPlace = document.querySelector(".recommendation-place.active");
 
             const message = document.createElement("div");
-
             message.className = "message message-sent place-message";
             message.textContent = "📍 " + placeName;
 
-            const selectedPlace =
-                document.querySelector(".recommendation-place.active");
-
             message.dataset.placeName = placeName;
-            message.dataset.placeId =
-                selectedPlace?.dataset.placeId || "";
-            message.dataset.lat =
-                selectedPlace?.dataset.lat || "";
-            message.dataset.lng =
-                selectedPlace?.dataset.lng || "";
+            message.dataset.placeId = selectedPlace?.dataset.placeId || "";
+            message.dataset.lat = selectedPlace?.dataset.lat || "";
+            message.dataset.lng = selectedPlace?.dataset.lng || "";
+
             chatMessages.appendChild(message);
-
             chatArea.classList.remove("place-mode");
-
         });
 
         document.addEventListener("click", function (event) {
-
             const placeMessage = event.target.closest(".place-message");
-
             if (!placeMessage) return;
 
             const lat = placeMessage.dataset.lat;
             const lng = placeMessage.dataset.lng;
-
             if (!lat || !lng) return;
 
             const googleMapsUrl =
                 `https://www.google.com/maps/search/?api=1&query=${lat},${lng}`;
 
             window.open(googleMapsUrl, "_blank");
-
         });
-
     </script>
 
 </body>
