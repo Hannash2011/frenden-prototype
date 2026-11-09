@@ -436,7 +436,7 @@ USER CARD
 =========================== */
 
 .user-card {
-    background: white;
+    background: rgb(218, 8, 8);
     border-radius: 18px;
     padding: 18px;
     width: 100%;
