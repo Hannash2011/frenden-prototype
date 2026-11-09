@@ -614,7 +614,7 @@ USER CARD
 
     margin: 30px auto;
 
-    background: rgb(201, 18, 18);
+    background: white;
 
     padding: 35px;
 
@@ -1119,7 +1119,7 @@ CHAT AREA
 }
 
 .chat-input input::placeholder {
-    color: #999;
+    color: #e05a9d;
 }
 
 .send-button {
