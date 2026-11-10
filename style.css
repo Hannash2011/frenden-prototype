@@ -1119,7 +1119,7 @@ CHAT AREA
 }
 
 .chat-input input::placeholder {
-    color: #e05a9d;
+    color: #999;
 }
 
 .send-button {
