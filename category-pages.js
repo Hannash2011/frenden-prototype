@@ -46,133 +46,262 @@ const categories = {
     "coffee-books": {
         title: "Coffee & Books",
         description: "Meet fellow book lovers for coffee and conversation."
-    }
-};
+    },
 
+    "gym": {
+        title: "Gym",
+        description: "Find company for gym sessions and fitness training."
+    },
+
+    "yoga-pilates": {
+        title: "Yoga & Pilates",
+        description: "Find people to practice yoga, Pilates and stretching."
+    },
+
+    "group-workouts": {
+        title: "Group Workouts",
+        description: "Join group fitness classes and exercise together."
+    },
+
+    "running": {
+        title: "Running",
+        description: "Find running partners and enjoy outdoor training."
+    },
+
+    "racket-sports": {
+        title: "Racket Sports",
+        description: "Find partners for tennis, badminton and table tennis."
+    },
+
+    "group-sports": {
+        title: "Group Sports",
+        description: "Find teams and people for group sports and games."
+    },
+
+    "cycling": {
+        title: "Cycling",
+        description: "Find company for bike rides and cycling routes."
+    },
+
+    "swimming": {
+        title: "Swimming",
+        description: "Find swimming partners and enjoy training together."
+    },
+
+    "hiking": {
+        title: "Hiking",
+        description: "Find company for hikes, trails and outdoor adventures."
+    },
+
+    "other-sports": {
+        title: "Other Sports",
+        description: "Discover other sports and find people to enjoy them with."
+    }
 
 // Распределение тестовых пользователей по подразделам
 
 const categoryUsers = {
-    "coffee": [
-        "anna",
-        "emma",
-        "lucas",
-        "sofia",
-        "daniel"
-    ],
+        "coffee": [
+            "anna",
+            "emma",
+            "lucas",
+            "sofia",
+            "daniel"
+        ],
 
-    "walks": [
-        "anna",
-        "daniel",
-        "noah",
-        "alex",
-        "nina"
-    ],
+        "walks": [
+            "anna",
+            "daniel",
+            "noah",
+            "alex",
+            "nina"
+        ],
 
-    "city-walks": [
-        "lucas",
-        "daniel",
-        "ethan",
-        "nina",
-        "alex"
-    ],
+        "city-walks": [
+            "lucas",
+            "daniel",
+            "ethan",
+            "nina",
+            "alex"
+        ],
 
-    "park-walks": [
-        "anna",
-        "noah",
-        "alex",
-        "mia",
-        "nina"
-    ],
+        "park-walks": [
+            "anna",
+            "noah",
+            "alex",
+            "mia",
+            "nina"
+        ],
 
-    "dog-walks": [
-        "alex",
-        "noah",
-        "mia",
-        "nina",
-        "ethan"
-    ],
+        "dog-walks": [
+            "alex",
+            "noah",
+            "mia",
+            "nina",
+            "ethan"
+        ],
 
-    "shopping": [
-        "emma",
-        "clara",
-        "lily",
-        "sofia",
-        "olivia"
-    ],
+        "shopping": [
+            "emma",
+            "clara",
+            "lily",
+            "sofia",
+            "olivia"
+        ],
 
-    "breakfast": [
-        "emma",
-        "olivia",
-        "clara",
-        "lily",
-        "anna"
-    ],
+        "breakfast": [
+            "emma",
+            "olivia",
+            "clara",
+            "lily",
+            "anna"
+        ],
 
-    "photo-walks": [
-        "mia",
-        "clara",
-        "ethan",
-        "alex",
-        "nina"
-    ],
+        "photo-walks": [
+            "mia",
+            "clara",
+            "ethan",
+            "alex",
+            "nina"
+        ],
 
-    "desserts": [
-        "lily",
-        "emma",
-        "clara",
-        "olivia",
-        "sofia"
-    ],
+        "desserts": [
+            "lily",
+            "emma",
+            "clara",
+            "olivia",
+            "sofia"
+        ],
 
-    "sunset-walks": [
-        "alex",
-        "nina",
-        "noah",
-        "mia",
-        "daniel"
-    ],
+        "sunset-walks": [
+            "alex",
+            "nina",
+            "noah",
+            "mia",
+            "daniel"
+        ],
 
-    "sunrise-walks": [
-        "emma",
-        "anna",
-        "olivia",
-        "lucas",
-        "ethan"
-    ],
+        "sunrise-walks": [
+            "emma",
+            "anna",
+            "olivia",
+            "lucas",
+            "ethan"
+        ],
 
-    "coffee-books": [
-        "olivia",
-        "anna",
-        "sofia",
-        "clara",
-        "emma"
-    ]
-};
+        "coffee-books": [
+            "olivia",
+            "anna",
+            "sofia",
+            "clara",
+            "emma"
+        ],
+
+        "gym": [
+            "anna",
+            "emma",
+            "lucas",
+            "sofia",
+            "daniel"
+        ],
+
+        "yoga-pilates": [
+            "emma",
+            "anna",
+            "olivia",
+            "clara",
+            "mia"
+        ],
+
+        "group-workouts": [
+            "emma",
+            "clara",
+            "lily",
+            "olivia",
+            "sofia"
+        ],
+
+        "running": [
+            "daniel",
+            "lucas",
+            "noah",
+            "alex",
+            "ethan"
+        ],
+
+        "racket-sports": [
+            "lucas",
+            "daniel",
+            "alex",
+            "nina",
+            "ethan"
+        ],
+
+        "group-sports": [
+            "noah",
+            "alex",
+            "daniel",
+            "ethan",
+            "lucas"
+        ],
+
+        "cycling": [
+            "noah",
+            "lucas",
+            "mia",
+            "alex",
+            "nina"
+        ],
+
+        "swimming": [
+            "anna",
+            "emma",
+            "mia",
+            "olivia",
+            "clara"
+        ],
+
+        "hiking": [
+            "noah",
+            "alex",
+            "nina",
+            "mia",
+            "daniel"
+        ],
+
+        "other-sports": [
+            "sofia",
+            "ethan",
+            "lily",
+            "olivia",
+            "clara"
+        ]
+
+    };
 
 
-const pageKey = location.pathname
-    .split("/")
-    .pop()
-    .replace(".html", "");
+    const pageKey = location.pathname
+        .split("/")
+        .pop()
+        .replace(".html", "");
 
-const category = categories[pageKey];
+    const category = categories[pageKey];
 
-if (category && window.profiles) {
+    if(category && window.profiles) {
 
-    document.title = `${category.title} | FrenDen`;
+        document.title = `${category.title} | FrenDen`;
 
-    const main = document.querySelector("main");
+const main = document.querySelector("main");
 
-    const userKeys = categoryUsers[pageKey] || [];
+const userKeys = categoryUsers[pageKey] || [];
 
-    const cards = userKeys
-        .filter(key => window.profiles[key])
-        .map(key => {
+const cards = userKeys
+    .filter(key => window.profiles[key])
+    .map(key => {
 
-            const person = window.profiles[key];
+        const person = window.profiles[key];
 
-            return `
+        return `
 <a href="profile.html?person=${encodeURIComponent(key)}&from=${encodeURIComponent(pageKey)}"
 class="user-card">
 
@@ -195,8 +324,8 @@ ${person.status}
 
 <div class="user-title">
 ${Array.isArray(person.looking)
-                    ? person.looking.join(" · ")
-                    : person.looking || person.activities || category.title}
+                ? person.looking.join(" · ")
+                : person.looking || person.activities || category.title}
 </div>
 
 <div class="user-text">
@@ -209,21 +338,23 @@ ${person.about || ""}
 
 <div class="tags">
 ${(person.activities || [])
-                    .slice(0, 3)
-                    .map(item => `<span>${item}</span>`)
-                    .join("")}
+                .slice(0, 3)
+                .map(item => `<span>${item}</span>`)
+                .join("")}
 </div>
 
 </a>
 `;
-        })
-        .join("");
+    })
+    .join("");
 
-    main.innerHTML = `
+main.innerHTML = `
 <div class="breadcrumbs">
 <a href="index.html">Home</a>
 <span>›</span>
-<a href="coffee-walk.html">Coffee & Walk</a>
+<a href="${["gym", "yoga-pilates", "group-workouts", "running", "racket-sports", "group-sports", "cycling", "swimming", "hiking", "other-sports"].includes(pageKey) ? "sport.html" : "coffee-walk.html"}">
+${["gym", "yoga-pilates", "group-workouts", "running", "racket-sports", "group-sports", "cycling", "swimming", "hiking", "other-sports"].includes(pageKey) ? "Sport" : "Coffee & Walk"}
+</a>
 <span>›</span>
 <span class="current">${category.title}</span>
 </div>
