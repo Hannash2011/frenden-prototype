@@ -296,10 +296,9 @@ BREADCRUMBS
     font-size: 15px;
 
     position: sticky;
-    top: 0;
-    z-index: 100;
-
-    background: #fff;
+    top: 76px;
+    z-index: 999;
+    background: #F6F1FF;
 }
 
 .breadcrumbs a {
