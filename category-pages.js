@@ -96,11 +96,11 @@ const categories = {
     "other-sports": {
         title: "Other Sports",
         description: "Discover other sports and find people to enjoy them with."
-    }
+    };
 
-// Распределение тестовых пользователей по подразделам
+    // Распределение тестовых пользователей по подразделам
 
-const categoryUsers = {
+    const categoryUsers = {
         "coffee": [
             "anna",
             "emma",
