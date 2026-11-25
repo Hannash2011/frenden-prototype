@@ -34,13 +34,12 @@
         <div class="breadcrumbs">
             <a href="index.html">Home</a>
             <span>›</span>
-            <a href="coffee-walk.html">Coffee & Walk</a>
+            <a href="coffee-walk.html" id="breadcrumb-parent">Coffee & Walk</a>
             <span>›</span>
             <a href="coffee.html" id="breadcrumb-section">Coffee</a>
             <span>›</span>
             <span class="current" id="breadcrumb-name">Anna</span>
         </div>
-
         <div class="back-link">
             <a href="coffee.html">← Back to Coffee</a>
         </div>
@@ -171,6 +170,29 @@
 
 
         const currentSection = sections[from] || sections.coffee;
+        const parentLink = document.getElementById("breadcrumb-parent");
+
+        const isSport = [
+            "gym",
+            "yoga-pilates",
+            "group-workouts",
+            "running",
+            "racket-sports",
+            "group-sports",
+            "cycling",
+            "swimming",
+            "hiking",
+            "other-sports"
+        ].includes(from);
+
+        if (isSport) {
+            parentLink.textContent = "Sport";
+            parentLink.href = "sport.html";
+        } else {
+            parentLink.textContent = "Coffee & Walk";
+            parentLink.href = "coffee-walk.html";
+        }
+
 
         const sectionLink = document.getElementById("breadcrumb-section");
         sectionLink.textContent = currentSection.name;
