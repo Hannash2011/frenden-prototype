@@ -96,212 +96,214 @@ const categories = {
     "other-sports": {
         title: "Other Sports",
         description: "Discover other sports and find people to enjoy them with."
-    };
-
-    // Распределение тестовых пользователей по подразделам
-
-    const categoryUsers = {
-        "coffee": [
-            "anna",
-            "emma",
-            "lucas",
-            "sofia",
-            "daniel"
-        ],
-
-        "walks": [
-            "anna",
-            "daniel",
-            "noah",
-            "alex",
-            "nina"
-        ],
-
-        "city-walks": [
-            "lucas",
-            "daniel",
-            "ethan",
-            "nina",
-            "alex"
-        ],
-
-        "park-walks": [
-            "anna",
-            "noah",
-            "alex",
-            "mia",
-            "nina"
-        ],
-
-        "dog-walks": [
-            "alex",
-            "noah",
-            "mia",
-            "nina",
-            "ethan"
-        ],
-
-        "shopping": [
-            "emma",
-            "clara",
-            "lily",
-            "sofia",
-            "olivia"
-        ],
-
-        "breakfast": [
-            "emma",
-            "olivia",
-            "clara",
-            "lily",
-            "anna"
-        ],
-
-        "photo-walks": [
-            "mia",
-            "clara",
-            "ethan",
-            "alex",
-            "nina"
-        ],
-
-        "desserts": [
-            "lily",
-            "emma",
-            "clara",
-            "olivia",
-            "sofia"
-        ],
-
-        "sunset-walks": [
-            "alex",
-            "nina",
-            "noah",
-            "mia",
-            "daniel"
-        ],
-
-        "sunrise-walks": [
-            "emma",
-            "anna",
-            "olivia",
-            "lucas",
-            "ethan"
-        ],
-
-        "coffee-books": [
-            "olivia",
-            "anna",
-            "sofia",
-            "clara",
-            "emma"
-        ],
-
-        "gym": [
-            "anna",
-            "emma",
-            "lucas",
-            "sofia",
-            "daniel"
-        ],
-
-        "yoga-pilates": [
-            "emma",
-            "anna",
-            "olivia",
-            "clara",
-            "mia"
-        ],
-
-        "group-workouts": [
-            "emma",
-            "clara",
-            "lily",
-            "olivia",
-            "sofia"
-        ],
-
-        "running": [
-            "daniel",
-            "lucas",
-            "noah",
-            "alex",
-            "ethan"
-        ],
-
-        "racket-sports": [
-            "lucas",
-            "daniel",
-            "alex",
-            "nina",
-            "ethan"
-        ],
-
-        "group-sports": [
-            "noah",
-            "alex",
-            "daniel",
-            "ethan",
-            "lucas"
-        ],
-
-        "cycling": [
-            "noah",
-            "lucas",
-            "mia",
-            "alex",
-            "nina"
-        ],
-
-        "swimming": [
-            "anna",
-            "emma",
-            "mia",
-            "olivia",
-            "clara"
-        ],
-
-        "hiking": [
-            "noah",
-            "alex",
-            "nina",
-            "mia",
-            "daniel"
-        ],
-
-        "other-sports": [
-            "sofia",
-            "ethan",
-            "lily",
-            "olivia",
-            "clara"
-        ]
-
-    };
+    }
+};
 
 
-    const pageKey = location.pathname
-        .split("/")
-        .pop()
-        .replace(".html", "");
+// Распределение тестовых пользователей по подразделам
 
-    const category = categories[pageKey];
+const categoryUsers = {
+    "coffee": [
+        "anna",
+        "emma",
+        "lucas",
+        "sofia",
+        "daniel"
+    ],
 
-    if(category && window.profiles) {
+    "walks": [
+        "anna",
+        "daniel",
+        "noah",
+        "alex",
+        "nina"
+    ],
 
-        document.title = `${category.title} | FrenDen`;
+    "city-walks": [
+        "lucas",
+        "daniel",
+        "ethan",
+        "nina",
+        "alex"
+    ],
 
-const main = document.querySelector("main");
+    "park-walks": [
+        "anna",
+        "noah",
+        "alex",
+        "mia",
+        "nina"
+    ],
 
-const userKeys = categoryUsers[pageKey] || [];
+    "dog-walks": [
+        "alex",
+        "noah",
+        "mia",
+        "nina",
+        "ethan"
+    ],
 
-const cards = userKeys
-    .filter(key => window.profiles[key])
-    .map(key => {
+    "shopping": [
+        "emma",
+        "clara",
+        "lily",
+        "sofia",
+        "olivia"
+    ],
 
-        const person = window.profiles[key];
+    "breakfast": [
+        "emma",
+        "olivia",
+        "clara",
+        "lily",
+        "anna"
+    ],
 
-        return `
+    "photo-walks": [
+        "mia",
+        "clara",
+        "ethan",
+        "alex",
+        "nina"
+    ],
+
+    "desserts": [
+        "lily",
+        "emma",
+        "clara",
+        "olivia",
+        "sofia"
+    ],
+
+    "sunset-walks": [
+        "alex",
+        "nina",
+        "noah",
+        "mia",
+        "daniel"
+    ],
+
+    "sunrise-walks": [
+        "emma",
+        "anna",
+        "olivia",
+        "lucas",
+        "ethan"
+    ],
+
+    "coffee-books": [
+        "olivia",
+        "anna",
+        "sofia",
+        "clara",
+        "emma"
+    ],
+
+    "gym": [
+        "anna",
+        "emma",
+        "lucas",
+        "sofia",
+        "daniel"
+    ],
+
+    "yoga-pilates": [
+        "emma",
+        "anna",
+        "olivia",
+        "clara",
+        "mia"
+    ],
+
+    "group-workouts": [
+        "emma",
+        "clara",
+        "lily",
+        "olivia",
+        "sofia"
+    ],
+
+    "running": [
+        "daniel",
+        "lucas",
+        "noah",
+        "alex",
+        "ethan"
+    ],
+
+    "racket-sports": [
+        "lucas",
+        "daniel",
+        "alex",
+        "nina",
+        "ethan"
+    ],
+
+    "group-sports": [
+        "noah",
+        "alex",
+        "daniel",
+        "ethan",
+        "lucas"
+    ],
+
+    "cycling": [
+        "noah",
+        "lucas",
+        "mia",
+        "alex",
+        "nina"
+    ],
+
+    "swimming": [
+        "anna",
+        "emma",
+        "mia",
+        "olivia",
+        "clara"
+    ],
+
+    "hiking": [
+        "noah",
+        "alex",
+        "nina",
+        "mia",
+        "daniel"
+    ],
+
+    "other-sports": [
+        "sofia",
+        "ethan",
+        "lily",
+        "olivia",
+        "clara"
+    ]
+
+};
+
+
+const pageKey = location.pathname
+    .split("/")
+    .pop()
+    .replace(".html", "");
+
+const category = categories[pageKey];
+
+if (category && window.profiles) {
+
+    document.title = `${category.title} | FrenDen`;
+
+    const main = document.querySelector("main");
+
+    const userKeys = categoryUsers[pageKey] || [];
+
+    const cards = userKeys
+        .filter(key => window.profiles[key])
+        .map(key => {
+
+            const person = window.profiles[key];
+
+            return `
 <a href="profile.html?person=${encodeURIComponent(key)}&from=${encodeURIComponent(pageKey)}"
 class="user-card">
 
@@ -324,8 +326,8 @@ ${person.status}
 
 <div class="user-title">
 ${Array.isArray(person.looking)
-                ? person.looking.join(" · ")
-                : person.looking || person.activities || category.title}
+                    ? person.looking.join(" · ")
+                    : person.looking || person.activities || category.title}
 </div>
 
 <div class="user-text">
@@ -338,17 +340,17 @@ ${person.about || ""}
 
 <div class="tags">
 ${(person.activities || [])
-                .slice(0, 3)
-                .map(item => `<span>${item}</span>`)
-                .join("")}
+                    .slice(0, 3)
+                    .map(item => `<span>${item}</span>`)
+                    .join("")}
 </div>
 
 </a>
 `;
-    })
-    .join("");
+        })
+        .join("");
 
-main.innerHTML = `
+    main.innerHTML = `
 <div class="breadcrumbs">
 <a href="index.html">Home</a>
 <span>›</span>
