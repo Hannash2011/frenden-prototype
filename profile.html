@@ -109,104 +109,73 @@
         const from = params.get("from") || "coffee";
 
         const sections = {
-            "coffee": {
-                name: "Coffee",
-                url: "coffee.html"
-            },
-            "walks": {
-                name: "Walks",
-                url: "walks.html"
-            },
-            "city-walks": {
-                name: "City Walks",
-                url: "city-walks.html"
-            },
-            "park-walks": {
-                name: "Park Walks",
-                url: "park-walks.html"
-            },
+            // COFFEE & WALK
+            "coffee": { name: "Coffee", url: "coffee.html", parent: "Coffee & Walk", parentUrl: "coffee-walk.html" },
+            "walks": { name: "Walks", url: "walks.html", parent: "Coffee & Walk", parentUrl: "coffee-walk.html" },
+            "city-walks": { name: "City Walks", url: "city-walks.html", parent: "Coffee & Walk", parentUrl: "coffee-walk.html" },
+            "park-walks": { name: "Park Walks", url: "park-walks.html", parent: "Coffee & Walk", parentUrl: "coffee-walk.html" },
+            "dog-walks": { name: "Dog Walks", url: "dog-walks.html", parent: "Coffee & Walk", parentUrl: "coffee-walk.html" },
+            "shopping": { name: "Shopping", url: "shopping.html", parent: "Coffee & Walk", parentUrl: "coffee-walk.html" },
+            "breakfast": { name: "Breakfast", url: "breakfast.html", parent: "Coffee & Walk", parentUrl: "coffee-walk.html" },
+            "photo-walks": { name: "Photo Walks", url: "photo-walks.html", parent: "Coffee & Walk", parentUrl: "coffee-walk.html" },
+            "desserts": { name: "Desserts", url: "desserts.html", parent: "Coffee & Walk", parentUrl: "coffee-walk.html" },
+            "sunset-walks": { name: "Sunset Walks", url: "sunset-walks.html", parent: "Coffee & Walk", parentUrl: "coffee-walk.html" },
+            "sunrise-walks": { name: "Sunrise Walks", url: "sunrise-walks.html", parent: "Coffee & Walk", parentUrl: "coffee-walk.html" },
+            "coffee-books": { name: "Coffee & Books", url: "coffee-books.html", parent: "Coffee & Walk", parentUrl: "coffee-walk.html" },
 
-            "gym": {
-                name: "Gym",
-                url: "gym.html"
-            },
-            "yoga-pilates": {
-                name: "Yoga & Pilates",
-                url: "yoga-pilates.html"
-            },
-            "group-workouts": {
-                name: "Group Workouts",
-                url: "group-workouts.html"
-            },
-            "running": {
-                name: "Running",
-                url: "running.html"
-            },
-            "racket-sports": {
-                name: "Racket Sports",
-                url: "racket-sports.html"
-            },
-            "group-sports": {
-                name: "Group Sports",
-                url: "group-sports.html"
-            },
-            "cycling": {
-                name: "Cycling",
-                url: "cycling.html"
-            },
-            "swimming": {
-                name: "Swimming",
-                url: "swimming.html"
-            },
-            "hiking": {
-                name: "Hiking",
-                url: "hiking.html"
-            },
-            "other-sports": {
-                name: "Other Sports",
-                url: "other-sports.html"
-            }
+            // SPORT
+            "gym": { name: "Gym", url: "gym.html", parent: "Sport", parentUrl: "sport.html" },
+            "yoga-pilates": { name: "Yoga & Pilates", url: "yoga-pilates.html", parent: "Sport", parentUrl: "sport.html" },
+            "group-workouts": { name: "Group Workouts", url: "group-workouts.html", parent: "Sport", parentUrl: "sport.html" },
+            "running": { name: "Running", url: "running.html", parent: "Sport", parentUrl: "sport.html" },
+            "racket-sports": { name: "Racket Sports", url: "racket-sports.html", parent: "Sport", parentUrl: "sport.html" },
+            "group-sports": { name: "Group Sports", url: "group-sports.html", parent: "Sport", parentUrl: "sport.html" },
+            "cycling": { name: "Cycling", url: "cycling.html", parent: "Sport", parentUrl: "sport.html" },
+            "swimming": { name: "Swimming", url: "swimming.html", parent: "Sport", parentUrl: "sport.html" },
+            "hiking": { name: "Hiking", url: "hiking.html", parent: "Sport", parentUrl: "sport.html" },
+            "other-sports": { name: "Other Sports", url: "other-sports.html", parent: "Sport", parentUrl: "sport.html" },
+
+            // ENTERTAINMENT
+            "spa-sauna": { name: "Spa & Sauna", url: "spa-sauna.html", parent: "Entertainment", parentUrl: "entertainment.html" },
+            "cinema": { name: "Cinema", url: "cinema.html", parent: "Entertainment", parentUrl: "entertainment.html" },
+            "concerts": { name: "Concerts", url: "concerts.html", parent: "Entertainment", parentUrl: "entertainment.html" },
+            "karaoke": { name: "Karaoke", url: "karaoke.html", parent: "Entertainment", parentUrl: "entertainment.html" },
+            "nightclubs": { name: "Nightclubs", url: "nightclubs.html", parent: "Entertainment", parentUrl: "entertainment.html" },
+            "festivals": { name: "Festivals", url: "festivals.html", parent: "Entertainment", parentUrl: "entertainment.html" },
+            "theatre": { name: "Theatre", url: "theatre.html", parent: "Entertainment", parentUrl: "entertainment.html" },
+            "bowling-billiards": { name: "Bowling & Billiards", url: "bowling-billiards.html", parent: "Entertainment", parentUrl: "entertainment.html" },
+            "stand-up-comedy": { name: "Stand-up Comedy", url: "stand-up-comedy.html", parent: "Entertainment", parentUrl: "entertainment.html" },
+            "museums": { name: "Museums", url: "museums.html", parent: "Entertainment", parentUrl: "entertainment.html" },
+            "exhibitions": { name: "Exhibitions", url: "exhibitions.html", parent: "Entertainment", parentUrl: "entertainment.html" },
+            "escape-rooms": { name: "Escape Rooms", url: "escape-rooms.html", parent: "Entertainment", parentUrl: "entertainment.html" },
+            "events-shows": { name: "Events & Shows", url: "events-shows.html", parent: "Entertainment", parentUrl: "entertainment.html" },
+            "other": { name: "Other", url: "other.html", parent: "Entertainment", parentUrl: "entertainment.html" }
         };
 
-
         const currentSection = sections[from] || sections.coffee;
+
+        // Parent breadcrumb
         const parentLink = document.getElementById("breadcrumb-parent");
+        parentLink.textContent = currentSection.parent;
+        parentLink.href = currentSection.parentUrl;
 
-        const isSport = [
-            "gym",
-            "yoga-pilates",
-            "group-workouts",
-            "running",
-            "racket-sports",
-            "group-sports",
-            "cycling",
-            "swimming",
-            "hiking",
-            "other-sports"
-        ].includes(from);
-
-        if (isSport) {
-            parentLink.textContent = "Sport";
-            parentLink.href = "sport.html";
-        } else {
-            parentLink.textContent = "Coffee & Walk";
-            parentLink.href = "coffee-walk.html";
-        }
-
-
+        // Subsection breadcrumb
         const sectionLink = document.getElementById("breadcrumb-section");
         sectionLink.textContent = currentSection.name;
         sectionLink.href = currentSection.url;
 
+        // Back link
         const backLink = document.querySelector(".back-link a");
         backLink.textContent = `← Back to ${currentSection.name}`;
         backLink.href = currentSection.url;
 
+        // User profile
         const personKey = (params.get("person") || "anna").toLowerCase();
         const person = window.profiles[personKey];
+
         if (!person) {
             document.querySelector(".profile-card").innerHTML =
-                "<h1>Profile not found</h1><p>Please return to Coffee.</p>";
+                "<h1>Profile not found</h1><p>Please return to the selected section.</p>";
         } else {
             document.title = `${person.name} | FrenDen`;
             document.querySelector("#breadcrumb-name").textContent = person.name;
@@ -219,6 +188,7 @@
             document.querySelector("#profile-time").textContent = person.time;
             document.querySelector("#profile-status").textContent = person.status;
             document.querySelector("#profile-about-text").textContent = person.about;
+
             document.querySelector("#profile-message-link").href =
                 `chat.html?person=${encodeURIComponent(personKey)}&from=${encodeURIComponent(from)}`;
 
@@ -237,6 +207,7 @@
             fillTags("profile-activities-tags", person.activities);
             fillTags("profile-languages-tags", person.languages);
         }
+
 
     </script>
 
