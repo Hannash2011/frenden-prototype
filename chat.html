@@ -27,27 +27,16 @@
 
     <main class="main">
         <div class="breadcrumbs">
-
             <a href="index.html">Home</a>
-
             <span>›</span>
-
-            <a href="coffee-walk.html">Coffee & Walk</a>
-
+            <a href="coffee-walk.html" id="chat-breadcrumb-parent">Coffee & Walk</a>
             <span>›</span>
-
             <a href="coffee.html" id="chat-breadcrumb-section">Coffee</a>
-
             <span>›</span>
-
             <a href="profile.html" id="chat-breadcrumb-person">Anna</a>
-
             <span>›</span>
-
             <span class="current">Chat</span>
-
         </div>
-
         <section class="chat-header">
 
             <div class="chat-avatar">
@@ -164,31 +153,70 @@
         const person = window.profiles[personKey];
         const personName = person ? person.name : personKey;
 
+        // ALL SECTIONS
         const sections = {
-            "coffee": { name: "Coffee", url: "coffee.html" },
-            "walks": { name: "Walks", url: "walks.html" },
-            "city-walks": { name: "City Walks", url: "city-walks.html" },
-            "park-walks": { name: "Park Walks", url: "park-walks.html" },
-            "dog-walks": { name: "Dog Walks", url: "dog-walks.html" },
-            "shopping": { name: "Shopping", url: "shopping.html" },
-            "breakfast": { name: "Breakfast", url: "breakfast.html" },
-            "photo-walks": { name: "Photo Walks", url: "photo-walks.html" },
-            "desserts": { name: "Desserts", url: "desserts.html" },
-            "sunset-walks": { name: "Sunset Walks", url: "sunset-walks.html" },
-            "sunrise-walks": { name: "Sunrise Walks", url: "sunrise-walks.html" },
-            "coffee-books": { name: "Coffee & Books", url: "coffee-books.html" }
+            // COFFEE & WALK
+            "coffee": { name: "Coffee", url: "coffee.html", parent: "Coffee & Walk", parentUrl: "coffee-walk.html" },
+            "walks": { name: "Walks", url: "walks.html", parent: "Coffee & Walk", parentUrl: "coffee-walk.html" },
+            "city-walks": { name: "City Walks", url: "city-walks.html", parent: "Coffee & Walk", parentUrl: "coffee-walk.html" },
+            "park-walks": { name: "Park Walks", url: "park-walks.html", parent: "Coffee & Walk", parentUrl: "coffee-walk.html" },
+            "dog-walks": { name: "Dog Walks", url: "dog-walks.html", parent: "Coffee & Walk", parentUrl: "coffee-walk.html" },
+            "shopping": { name: "Shopping", url: "shopping.html", parent: "Coffee & Walk", parentUrl: "coffee-walk.html" },
+            "breakfast": { name: "Breakfast", url: "breakfast.html", parent: "Coffee & Walk", parentUrl: "coffee-walk.html" },
+            "photo-walks": { name: "Photo Walks", url: "photo-walks.html", parent: "Coffee & Walk", parentUrl: "coffee-walk.html" },
+            "desserts": { name: "Desserts", url: "desserts.html", parent: "Coffee & Walk", parentUrl: "coffee-walk.html" },
+            "sunset-walks": { name: "Sunset Walks", url: "sunset-walks.html", parent: "Coffee & Walk", parentUrl: "coffee-walk.html" },
+            "sunrise-walks": { name: "Sunrise Walks", url: "sunrise-walks.html", parent: "Coffee & Walk", parentUrl: "coffee-walk.html" },
+            "coffee-books": { name: "Coffee & Books", url: "coffee-books.html", parent: "Coffee & Walk", parentUrl: "coffee-walk.html" },
+
+            // SPORT
+            "gym": { name: "Gym", url: "gym.html", parent: "Sport", parentUrl: "sport.html" },
+            "yoga-pilates": { name: "Yoga & Pilates", url: "yoga-pilates.html", parent: "Sport", parentUrl: "sport.html" },
+            "group-workouts": { name: "Group Workouts", url: "group-workouts.html", parent: "Sport", parentUrl: "sport.html" },
+            "running": { name: "Running", url: "running.html", parent: "Sport", parentUrl: "sport.html" },
+            "racket-sports": { name: "Racket Sports", url: "racket-sports.html", parent: "Sport", parentUrl: "sport.html" },
+            "group-sports": { name: "Group Sports", url: "group-sports.html", parent: "Sport", parentUrl: "sport.html" },
+            "cycling": { name: "Cycling", url: "cycling.html", parent: "Sport", parentUrl: "sport.html" },
+            "swimming": { name: "Swimming", url: "swimming.html", parent: "Sport", parentUrl: "sport.html" },
+            "hiking": { name: "Hiking", url: "hiking.html", parent: "Sport", parentUrl: "sport.html" },
+            "other-sports": { name: "Other Sports", url: "other-sports.html", parent: "Sport", parentUrl: "sport.html" },
+
+            // ENTERTAINMENT
+            "spa-sauna": { name: "Spa & Sauna", url: "spa-sauna.html", parent: "Entertainment", parentUrl: "entertainment.html" },
+            "cinema": { name: "Cinema", url: "cinema.html", parent: "Entertainment", parentUrl: "entertainment.html" },
+            "concerts": { name: "Concerts", url: "concerts.html", parent: "Entertainment", parentUrl: "entertainment.html" },
+            "karaoke": { name: "Karaoke", url: "karaoke.html", parent: "Entertainment", parentUrl: "entertainment.html" },
+            "nightclubs": { name: "Nightclubs", url: "nightclubs.html", parent: "Entertainment", parentUrl: "entertainment.html" },
+            "festivals": { name: "Festivals", url: "festivals.html", parent: "Entertainment", parentUrl: "entertainment.html" },
+            "theatre": { name: "Theatre", url: "theatre.html", parent: "Entertainment", parentUrl: "entertainment.html" },
+            "bowling-billiards": { name: "Bowling & Billiards", url: "bowling-billiards.html", parent: "Entertainment", parentUrl: "entertainment.html" },
+            "stand-up-comedy": { name: "Stand-up Comedy", url: "stand-up-comedy.html", parent: "Entertainment", parentUrl: "entertainment.html" },
+            "museums": { name: "Museums", url: "museums.html", parent: "Entertainment", parentUrl: "entertainment.html" },
+            "exhibitions": { name: "Exhibitions", url: "exhibitions.html", parent: "Entertainment", parentUrl: "entertainment.html" },
+            "escape-rooms": { name: "Escape Rooms", url: "escape-rooms.html", parent: "Entertainment", parentUrl: "entertainment.html" },
+            "events-shows": { name: "Events & Shows", url: "events-shows.html", parent: "Entertainment", parentUrl: "entertainment.html" },
+            "other": { name: "Other", url: "other.html", parent: "Entertainment", parentUrl: "entertainment.html" }
         };
 
+        // CURRENT SECTION
         const currentSection = sections[from] || sections.coffee;
 
+        // PARENT BREADCRUMB
+        const parentLink = document.getElementById("chat-breadcrumb-parent");
+        parentLink.textContent = currentSection.parent;
+        parentLink.href = currentSection.parentUrl;
+
+        // SUBSECTION BREADCRUMB
         const sectionLink = document.getElementById("chat-breadcrumb-section");
         sectionLink.textContent = currentSection.name;
         sectionLink.href = currentSection.url;
 
+        // PROFILE BREADCRUMB
         const personLink = document.getElementById("chat-breadcrumb-person");
         personLink.textContent = personName;
         personLink.href = `profile.html?person=${encodeURIComponent(personKey)}&from=${encodeURIComponent(from)}`;
 
+        // CHAT HEADER
         document.querySelector("#chat-person-name").textContent = personName;
 
         const chatAvatar = document.querySelector("#chat-person-avatar");
@@ -210,12 +238,14 @@
         document.querySelector("#send-place").textContent =
             `Send to ${personName}`;
 
+        // CHAT ELEMENTS
         const messageInput = document.querySelector(".chat-input input");
         const sendButton = document.querySelector(".send-button");
         const chatMessages = document.querySelector(".chat-messages");
         const findPlaceButton = document.querySelector("#find-place");
         const chatArea = document.querySelector(".chat-area");
 
+        // SEND MESSAGE
         function sendMessage() {
             const text = messageInput.value.trim();
             if (text === "") return;
@@ -237,10 +267,12 @@
             }
         });
 
+        // FIND PLACE
         findPlaceButton.addEventListener("click", () => {
             chatArea.classList.add("place-mode");
         });
 
+        // RECOMMENDATION PLACES AND MAP PINS
         const recommendationPlaces = document.querySelectorAll(".recommendation-place");
         const mapPins = document.querySelectorAll(".map-pin");
 
@@ -267,6 +299,7 @@
             });
         });
 
+        // SEND PLACE
         const sendPlaceButton = document.querySelector("#send-place");
         const selectedPlaceName = document.querySelector("#selected-place-name");
 
@@ -287,6 +320,7 @@
             chatArea.classList.remove("place-mode");
         });
 
+        // OPEN PLACE IN GOOGLE MAPS
         document.addEventListener("click", function (event) {
             const placeMessage = event.target.closest(".place-message");
             if (!placeMessage) return;
@@ -300,6 +334,8 @@
 
             window.open(googleMapsUrl, "_blank");
         });
+
+
     </script>
 
 </body>
