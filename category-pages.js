@@ -96,8 +96,126 @@ const categories = {
     "other-sports": {
         title: "Other Sports",
         description: "Discover other sports and find people to enjoy them with."
+    },
+
+    // ENTERTAINMENT
+
+    "cinema": {
+        title: "Cinema",
+        description: "Find company for movies, cinema evenings and film nights."
+    },
+
+    "concerts-live-music": {
+        title: "Concerts & Live Music",
+        description: "Find people to enjoy concerts and live music together."
+    },
+
+    "spa-wellness": {
+        title: "Spa & Wellness",
+        description: "Find company for spa days, saunas and wellness experiences."
+    },
+
+    "karaoke": {
+        title: "Karaoke",
+        description: "Find people to sing, have fun and enjoy karaoke together."
+    },
+
+    "bowling-billiards": {
+        title: "Bowling & Billiards",
+        description: "Find partners for bowling, billiards and friendly games."
+    },
+
+    "theatre-musicals": {
+        title: "Theatre & Musicals",
+        description: "Find company for theatre performances and musicals."
+    },
+
+    "festivals": {
+        title: "Festivals",
+        description: "Discover festivals and enjoy special events together."
+    },
+
+    "museums-exhibitions": {
+        title: "Museums & Exhibitions",
+        description: "Explore museums, art exhibitions and cultural places together."
+    },
+
+    "stand-up-comedy": {
+        title: "Stand-up Comedy",
+        description: "Find company for comedy shows and stand-up evenings."
+    },
+
+    "nightclubs": {
+        title: "Nightclubs",
+        description: "Find people for dancing and nights out."
+    },
+
+    "escape-rooms": {
+        title: "Escape Rooms",
+        description: "Find a team for puzzles, challenges and escape room adventures."
+    },
+
+    "events-shows": {
+        title: "Events & Shows",
+        description: "Discover interesting events, performances and special shows."
+    },
+
+    "dance-events": {
+        title: "Dance & Dance Events",
+        description: "Find company for dancing and dance events."
+    },
+
+    "other": {
+        title: "Other",
+        description: "Find company for other entertainment activities and experiences."
     }
+
 };
+
+const sectionParents = {
+    // COFFEE & WALK
+    "coffee": { name: "Coffee & Walk", url: "coffee-walk.html" },
+    "walks": { name: "Coffee & Walk", url: "coffee-walk.html" },
+    "city-walks": { name: "Coffee & Walk", url: "coffee-walk.html" },
+    "park-walks": { name: "Coffee & Walk", url: "coffee-walk.html" },
+    "dog-walks": { name: "Coffee & Walk", url: "coffee-walk.html" },
+    "shopping": { name: "Coffee & Walk", url: "coffee-walk.html" },
+    "breakfast": { name: "Coffee & Walk", url: "coffee-walk.html" },
+    "photo-walks": { name: "Coffee & Walk", url: "coffee-walk.html" },
+    "desserts": { name: "Coffee & Walk", url: "coffee-walk.html" },
+    "sunset-walks": { name: "Coffee & Walk", url: "coffee-walk.html" },
+    "sunrise-walks": { name: "Coffee & Walk", url: "coffee-walk.html" },
+    "coffee-books": { name: "Coffee & Walk", url: "coffee-walk.html" },
+
+    // SPORT
+    "gym": { name: "Sport", url: "sport.html" },
+    "yoga-pilates": { name: "Sport", url: "sport.html" },
+    "group-workouts": { name: "Sport", url: "sport.html" },
+    "running": { name: "Sport", url: "sport.html" },
+    "racket-sports": { name: "Sport", url: "sport.html" },
+    "group-sports": { name: "Sport", url: "sport.html" },
+    "cycling": { name: "Sport", url: "sport.html" },
+    "swimming": { name: "Sport", url: "sport.html" },
+    "hiking": { name: "Sport", url: "sport.html" },
+    "other-sports": { name: "Sport", url: "sport.html" },
+
+    // ENTERTAINMENT
+    "cinema": { name: "Entertainment", url: "entertainment.html" },
+    "concerts-live-music": { name: "Entertainment", url: "entertainment.html" },
+    "spa-wellness": { name: "Entertainment", url: "entertainment.html" },
+    "karaoke": { name: "Entertainment", url: "entertainment.html" },
+    "bowling-billiards": { name: "Entertainment", url: "entertainment.html" },
+    "theatre-musicals": { name: "Entertainment", url: "entertainment.html" },
+    "festivals": { name: "Entertainment", url: "entertainment.html" },
+    "museums-exhibitions": { name: "Entertainment", url: "entertainment.html" },
+    "stand-up-comedy": { name: "Entertainment", url: "entertainment.html" },
+    "nightclubs": { name: "Entertainment", url: "entertainment.html" },
+    "escape-rooms": { name: "Entertainment", url: "entertainment.html" },
+    "events-shows": { name: "Entertainment", url: "entertainment.html" },
+    "dance-events": { name: "Entertainment", url: "entertainment.html" },
+    "other": { name: "Entertainment", url: "entertainment.html" }
+};
+
 
 
 // Распределение тестовых пользователей по подразделам
@@ -354,8 +472,8 @@ ${(person.activities || [])
 <div class="breadcrumbs">
 <a href="index.html">Home</a>
 <span>›</span>
-<a href="${["gym", "yoga-pilates", "group-workouts", "running", "racket-sports", "group-sports", "cycling", "swimming", "hiking", "other-sports"].includes(pageKey) ? "sport.html" : "coffee-walk.html"}">
-${["gym", "yoga-pilates", "group-workouts", "running", "racket-sports", "group-sports", "cycling", "swimming", "hiking", "other-sports"].includes(pageKey) ? "Sport" : "Coffee & Walk"}
+<a href="${sectionParents[pageKey].url}">
+${sectionParents[pageKey].name}
 </a>
 <span>›</span>
 <span class="current">${category.title}</span>
